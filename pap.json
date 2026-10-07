@@ -1,0 +1,378 @@
+{
+  "title": "Op-ed plus chatbot conversation vs placebo plus chatbot on infrastructure spending attitudes",
+  "constructs": [
+    "persuasion",
+    "policy_support",
+    "ai_generated_content",
+    "deliberation"
+  ],
+  "keywords": [
+    "chatbot",
+    "op-ed",
+    "persuasion",
+    "infrastructure spending",
+    "certainty"
+  ],
+  "registration": {
+    "status": "none",
+    "url": "",
+    "note": "Plan reconstructed post hoc (2026-10-05) from replication_script.R of the published analysis; not pre-registered."
+  },
+  "design": {
+    "type": "survey_experiment",
+    "arms": {
+      "column": "treatment",
+      "treatment": "1",
+      "control": "0",
+      "labels": {
+        "1": "Op-ed + chatbot",
+        "0": "Placebo + chatbot"
+      },
+      "descriptions": {
+        "1": "Op-ed against own position, then chatbot conversation",
+        "0": "Unrelated placebo article, then chatbot conversation"
+      }
+    },
+    "population": {
+      "country": "US",
+      "sample": "online_panel"
+    },
+    "outcome_type": "attitude"
+  },
+  "registered": {
+    "outcomes": [
+      {
+        "name": "toward_counterarg",
+        "label": "Support moved toward op-ed position",
+        "kind": "single_item",
+        "columns": [
+          "toward_counterarg"
+        ],
+        "reverse": [],
+        "scale": [
+          1,
+          7
+        ],
+        "construction": "Spending support (1-7) recoded so higher = closer to op-ed position (8-strength for pro, strength for anti)."
+      },
+      {
+        "name": "certainty",
+        "label": "Certainty in position",
+        "kind": "single_item",
+        "columns": [
+          "certainty"
+        ],
+        "reverse": [],
+        "scale": [
+          0,
+          100
+        ],
+        "construction": "Single item 0-100."
+      },
+      {
+        "name": "counterarg_keyword",
+        "label": "Recall uses op-ed keyword (opposing side)",
+        "kind": "single_item",
+        "columns": [
+          "counterarg_keyword"
+        ],
+        "reverse": [],
+        "scale": [
+          0,
+          1
+        ],
+        "construction": "Binary keyword indicator."
+      },
+      {
+        "name": "supportive_keyword",
+        "label": "Recall uses op-ed keyword (own side)",
+        "kind": "single_item",
+        "columns": [
+          "supportive_keyword"
+        ],
+        "reverse": [],
+        "scale": [
+          0,
+          1
+        ],
+        "construction": "Binary keyword indicator."
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "H1",
+        "text": "Op-ed + chatbot raises movement toward op-ed position vs placebo.",
+        "outcome": "toward_counterarg",
+        "treatment": {
+          "column": "treatment",
+          "contrast": [
+            "1",
+            "0"
+          ]
+        },
+        "direction": "two_sided",
+        "estimator": {
+          "kind": "ols",
+          "robust": "HC2",
+          "cluster": null,
+          "weights": null,
+          "covariates": []
+        },
+        "subgroup": null,
+        "exclusions": []
+      },
+      {
+        "id": "H2",
+        "text": "Op-ed + chatbot lowers certainty.",
+        "outcome": "certainty",
+        "treatment": {
+          "column": "treatment",
+          "contrast": [
+            "1",
+            "0"
+          ]
+        },
+        "direction": "two_sided",
+        "estimator": {
+          "kind": "ols",
+          "robust": "HC2",
+          "cluster": null,
+          "weights": null,
+          "covariates": []
+        },
+        "subgroup": null,
+        "exclusions": []
+      },
+      {
+        "id": "H3",
+        "text": "Op-ed + chatbot raises counterargument keyword recall.",
+        "outcome": "counterarg_keyword",
+        "treatment": {
+          "column": "treatment",
+          "contrast": [
+            "1",
+            "0"
+          ]
+        },
+        "direction": "two_sided",
+        "estimator": {
+          "kind": "ols",
+          "robust": "HC2",
+          "cluster": null,
+          "weights": null,
+          "covariates": []
+        },
+        "subgroup": null,
+        "exclusions": []
+      },
+      {
+        "id": "H4",
+        "text": "Op-ed + chatbot changes supportive keyword recall.",
+        "outcome": "supportive_keyword",
+        "treatment": {
+          "column": "treatment",
+          "contrast": [
+            "1",
+            "0"
+          ]
+        },
+        "direction": "two_sided",
+        "estimator": {
+          "kind": "ols",
+          "robust": "HC2",
+          "cluster": null,
+          "weights": null,
+          "covariates": []
+        },
+        "subgroup": null,
+        "exclusions": []
+      }
+    ],
+    "subgroups": [
+      {
+        "id": "S1",
+        "hypothesis": "H1",
+        "moderator": "group",
+        "levels": {
+          "pro": "Pro-spending",
+          "anti": "Anti-spending"
+        },
+        "expected": "Effect estimated within each group"
+      }
+    ],
+    "sample_exclusions": [
+      "treatment in [0, 1]"
+    ],
+    "multiple_testing": "none",
+    "alpha": 0.05
+  },
+  "implemented": {
+    "outcomes": [
+      {
+        "name": "toward_counterarg",
+        "label": "Support moved toward op-ed position",
+        "kind": "single_item",
+        "columns": [
+          "toward_counterarg"
+        ],
+        "reverse": [],
+        "scale": [
+          1,
+          7
+        ],
+        "construction": "Spending support (1-7) recoded so higher = closer to op-ed position (8-strength for pro, strength for anti)."
+      },
+      {
+        "name": "certainty",
+        "label": "Certainty in position",
+        "kind": "single_item",
+        "columns": [
+          "certainty"
+        ],
+        "reverse": [],
+        "scale": [
+          0,
+          100
+        ],
+        "construction": "Single item 0-100."
+      },
+      {
+        "name": "counterarg_keyword",
+        "label": "Recall uses op-ed keyword (opposing side)",
+        "kind": "single_item",
+        "columns": [
+          "counterarg_keyword"
+        ],
+        "reverse": [],
+        "scale": [
+          0,
+          1
+        ],
+        "construction": "Binary keyword indicator."
+      },
+      {
+        "name": "supportive_keyword",
+        "label": "Recall uses op-ed keyword (own side)",
+        "kind": "single_item",
+        "columns": [
+          "supportive_keyword"
+        ],
+        "reverse": [],
+        "scale": [
+          0,
+          1
+        ],
+        "construction": "Binary keyword indicator."
+      }
+    ],
+    "hypotheses": [
+      {
+        "id": "H1",
+        "text": "Op-ed + chatbot raises movement toward op-ed position vs placebo.",
+        "outcome": "toward_counterarg",
+        "treatment": {
+          "column": "treatment",
+          "contrast": [
+            "1",
+            "0"
+          ]
+        },
+        "direction": "two_sided",
+        "estimator": {
+          "kind": "ols",
+          "robust": "HC2",
+          "cluster": null,
+          "weights": null,
+          "covariates": []
+        },
+        "subgroup": null,
+        "exclusions": []
+      },
+      {
+        "id": "H2",
+        "text": "Op-ed + chatbot lowers certainty.",
+        "outcome": "certainty",
+        "treatment": {
+          "column": "treatment",
+          "contrast": [
+            "1",
+            "0"
+          ]
+        },
+        "direction": "two_sided",
+        "estimator": {
+          "kind": "ols",
+          "robust": "HC2",
+          "cluster": null,
+          "weights": null,
+          "covariates": []
+        },
+        "subgroup": null,
+        "exclusions": []
+      },
+      {
+        "id": "H3",
+        "text": "Op-ed + chatbot raises counterargument keyword recall.",
+        "outcome": "counterarg_keyword",
+        "treatment": {
+          "column": "treatment",
+          "contrast": [
+            "1",
+            "0"
+          ]
+        },
+        "direction": "two_sided",
+        "estimator": {
+          "kind": "ols",
+          "robust": "HC2",
+          "cluster": null,
+          "weights": null,
+          "covariates": []
+        },
+        "subgroup": null,
+        "exclusions": []
+      },
+      {
+        "id": "H4",
+        "text": "Op-ed + chatbot changes supportive keyword recall.",
+        "outcome": "supportive_keyword",
+        "treatment": {
+          "column": "treatment",
+          "contrast": [
+            "1",
+            "0"
+          ]
+        },
+        "direction": "two_sided",
+        "estimator": {
+          "kind": "ols",
+          "robust": "HC2",
+          "cluster": null,
+          "weights": null,
+          "covariates": []
+        },
+        "subgroup": null,
+        "exclusions": []
+      }
+    ],
+    "subgroups": [
+      {
+        "id": "S1",
+        "hypothesis": "H1",
+        "moderator": "group",
+        "levels": {
+          "pro": "Pro-spending",
+          "anti": "Anti-spending"
+        },
+        "expected": "Effect estimated within each group"
+      }
+    ],
+    "sample_exclusions": [
+      "treatment in [0, 1]"
+    ],
+    "multiple_testing": "none",
+    "alpha": 0.05
+  },
+  "ambiguities": [],
+  "source": "pap.md"
+}

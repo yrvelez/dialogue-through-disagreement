@@ -1,0 +1,437 @@
+{
+ "id": "generalizability_conditional",
+ "kind": "boundary",
+ "title": "Oversampling the anti-spending position and varying topic",
+ "rationale": "The source op-ed effect was 0.64 points overall, but only 59 participants were anti-spending (effect 0.232, SE 0.454), and the position interaction was 0.425 (p=0.37), so moderation is untested. Only one topic (spending) was used, so topic generality is unknown.",
+ "contribution": "Tests whether the op-ed plus chatbot effect holds for anti-spending respondents and on a second, unrelated policy topic, using adequately powered interaction tests.",
+ "limitations": [
+  "Both arms include the chatbot, so the chatbot's added value is not separated from the op-ed.",
+  "Only two topics, so topic generality is limited.",
+  "Attitudes are measured immediately after exposure; durability is unknown.",
+  "Prior position is self-reported before treatment and may prime respondents.",
+  "Keyword measures may reflect echoing."
+ ],
+ "design": {
+  "title": "Op-ed versus placebo across prior position and topic",
+  "overview": "Respondents are screened for position on a topic, with equal numbers of pro- and anti-spending respondents recruited. Each respondent is randomly assigned to read an op-ed against their own position or an unrelated placebo article, then chats with a chatbot, and then answers the source outcomes. A second topic (a different policy issue) is run in the same way, with respondents randomly assigned to one topic.",
+  "hypothesis": "The op-ed moves attitudes toward the op-ed position relative to placebo in both position groups and on both topics. The treatment by position and treatment by topic interactions are small relative to the main effect.",
+  "primaryOutcome": "Support moved toward the op-ed position (1-7 recoded), as in the source study.",
+  "comparison": "Op-ed + chatbot versus placebo + chatbot, with interactions of treatment with prior position (pro vs anti) and with topic.",
+  "population": "US online panel adults, quota-sampled for equal numbers of pro- and anti-spending respondents on the spending topic and equal numbers of pro and anti on the second topic.",
+  "conditions": [
+   {
+    "id": "oped",
+    "title": "Op-ed + chatbot",
+    "description": "Op-ed against own position, then chatbot conversation",
+    "nodeId": "arm_oped"
+   },
+   {
+    "id": "placebo",
+    "title": "Placebo + chatbot",
+    "description": "Unrelated placebo article, then chatbot conversation",
+    "nodeId": "arm_placebo"
+   }
+  ],
+  "blocks": [
+   {
+    "id": "b_consent",
+    "title": "Consent",
+    "questions": [
+     {
+      "id": "q_consent",
+      "type": "MC",
+      "text": "You are invited to take part in a research survey on political opinions. It takes about 10 minutes and is voluntary. Do you consent to participate?",
+      "tag": "consent",
+      "multiple": false,
+      "required": true,
+      "choices": [
+       {
+        "id": "c_yes",
+        "text": "I consent",
+        "recode": "1"
+       },
+       {
+        "id": "c_no",
+        "text": "I do not consent",
+        "recode": "0"
+       }
+      ],
+      "rows": [],
+      "sourceQuestionId": ""
+     }
+    ]
+   },
+   {
+    "id": "b_pre",
+    "title": "Prior position",
+    "questions": [
+     {
+      "id": "q_group",
+      "type": "MC",
+      "text": "Do you support or oppose increasing government spending on the issue described to you on the previous screen? (Your answers determine which article you will read.)",
+      "tag": "group",
+      "multiple": false,
+      "required": true,
+      "choices": [
+       {
+        "id": "g_pro",
+        "text": "Support",
+        "recode": "1"
+       },
+       {
+        "id": "g_anti",
+        "text": "Oppose",
+        "recode": "0"
+       }
+      ],
+      "rows": [],
+      "sourceQuestionId": "group"
+     }
+    ]
+   },
+   {
+    "id": "b_oped",
+    "title": "Op-ed",
+    "questions": [
+     {
+      "id": "q_oped",
+      "type": "DB",
+      "text": "Please read the following opinion article carefully. It argues against your current position.",
+      "tag": "oped_text",
+      "multiple": false,
+      "required": false,
+      "choices": [],
+      "rows": [],
+      "sourceQuestionId": ""
+     }
+    ]
+   },
+   {
+    "id": "b_placebo",
+    "title": "Placebo",
+    "questions": [
+     {
+      "id": "q_plac",
+      "type": "DB",
+      "text": "Please read the following article about an unrelated everyday topic carefully.",
+      "tag": "placebo_text",
+      "multiple": false,
+      "required": false,
+      "choices": [],
+      "rows": [],
+      "sourceQuestionId": ""
+     }
+    ]
+   },
+   {
+    "id": "b_chat",
+    "title": "Chatbot",
+    "questions": [
+     {
+      "id": "q_chat",
+      "type": "DB",
+      "text": "Next you will have a short conversation with a chatbot about the issue. Please share your views and respond to its questions for a few minutes.",
+      "tag": "chat_intro",
+      "multiple": false,
+      "required": false,
+      "choices": [],
+      "rows": [],
+      "sourceQuestionId": ""
+     }
+    ]
+   },
+   {
+    "id": "b_out",
+    "title": "Outcomes",
+    "questions": [
+     {
+      "id": "q_support",
+      "type": "MC",
+      "text": "How much do you support increasing government spending on this issue? (1 = strongly oppose, 7 = strongly support)",
+      "tag": "toward_counterarg",
+      "multiple": false,
+      "required": true,
+      "choices": [
+       {
+        "id": "s1",
+        "text": "1",
+        "recode": "1"
+       },
+       {
+        "id": "s2",
+        "text": "2",
+        "recode": "2"
+       },
+       {
+        "id": "s3",
+        "text": "3",
+        "recode": "3"
+       },
+       {
+        "id": "s4",
+        "text": "4",
+        "recode": "4"
+       },
+       {
+        "id": "s5",
+        "text": "5",
+        "recode": "5"
+       },
+       {
+        "id": "s6",
+        "text": "6",
+        "recode": "6"
+       },
+       {
+        "id": "s7",
+        "text": "7",
+        "recode": "7"
+       }
+      ],
+      "rows": [],
+      "sourceQuestionId": "toward_counterarg"
+     },
+     {
+      "id": "q_cert",
+      "type": "TE",
+      "text": "How certain are you of your position, from 0 to 100?",
+      "tag": "certainty",
+      "multiple": false,
+      "required": true,
+      "choices": [],
+      "rows": [],
+      "sourceQuestionId": "certainty"
+     }
+    ]
+   },
+   {
+    "id": "b_debrief",
+    "title": "Debrief",
+    "questions": [
+     {
+      "id": "q_debrief",
+      "type": "DB",
+      "text": "Thank you. The article you read was written for this study and may present only one side of the issue. The chatbot is an automated program. Contact the research team with any questions.",
+      "tag": "debrief",
+      "multiple": false,
+      "required": false,
+      "choices": [],
+      "rows": [],
+      "sourceQuestionId": ""
+     }
+    ]
+   }
+  ],
+  "flow": [
+   {
+    "id": "n_consent",
+    "type": "block",
+    "label": "Consent",
+    "children": [],
+    "blockId": "b_consent",
+    "field": "",
+    "value": "",
+    "questionId": "",
+    "choiceId": "",
+    "operator": "equals"
+   },
+   {
+    "id": "n_end",
+    "type": "end",
+    "label": "End non-consent",
+    "children": [],
+    "blockId": "",
+    "field": "",
+    "value": "",
+    "questionId": "",
+    "choiceId": "",
+    "operator": "equals"
+   },
+   {
+    "id": "n_br",
+    "type": "branch",
+    "label": "Non-consent",
+    "children": [
+     "n_end"
+    ],
+    "blockId": "",
+    "field": "",
+    "value": "",
+    "questionId": "q_consent",
+    "choiceId": "c_no",
+    "operator": "selected"
+   },
+   {
+    "id": "n_pre",
+    "type": "block",
+    "label": "Prior position",
+    "children": [],
+    "blockId": "b_pre",
+    "field": "",
+    "value": "",
+    "questionId": "",
+    "choiceId": "",
+    "operator": "equals"
+   },
+   {
+    "id": "r1",
+    "type": "randomizer",
+    "label": "Assignment",
+    "children": [
+     "arm_oped",
+     "arm_placebo"
+    ],
+    "blockId": "",
+    "field": "",
+    "value": "",
+    "questionId": "",
+    "choiceId": "",
+    "operator": "equals"
+   },
+   {
+    "id": "arm_oped",
+    "type": "group",
+    "label": "Op-ed arm",
+    "children": [
+     "set_oped",
+     "n_oped"
+    ],
+    "blockId": "",
+    "field": "",
+    "value": "",
+    "questionId": "",
+    "choiceId": "",
+    "operator": "equals"
+   },
+   {
+    "id": "set_oped",
+    "type": "embedded",
+    "label": "Set condition",
+    "children": [],
+    "blockId": "",
+    "field": "condition",
+    "value": "oped",
+    "questionId": "",
+    "choiceId": "",
+    "operator": "equals"
+   },
+   {
+    "id": "n_oped",
+    "type": "block",
+    "label": "Op-ed",
+    "children": [],
+    "blockId": "b_oped",
+    "field": "",
+    "value": "",
+    "questionId": "",
+    "choiceId": "",
+    "operator": "equals"
+   },
+   {
+    "id": "arm_placebo",
+    "type": "group",
+    "label": "Placebo arm",
+    "children": [
+     "set_placebo",
+     "n_placebo"
+    ],
+    "blockId": "",
+    "field": "",
+    "value": "",
+    "questionId": "",
+    "choiceId": "",
+    "operator": "equals"
+   },
+   {
+    "id": "set_placebo",
+    "type": "embedded",
+    "label": "Set condition",
+    "children": [],
+    "blockId": "",
+    "field": "condition",
+    "value": "placebo",
+    "questionId": "",
+    "choiceId": "",
+    "operator": "equals"
+   },
+   {
+    "id": "n_placebo",
+    "type": "block",
+    "label": "Placebo",
+    "children": [],
+    "blockId": "b_placebo",
+    "field": "",
+    "value": "",
+    "questionId": "",
+    "choiceId": "",
+    "operator": "equals"
+   },
+   {
+    "id": "n_chat",
+    "type": "block",
+    "label": "Chatbot",
+    "children": [],
+    "blockId": "b_chat",
+    "field": "",
+    "value": "",
+    "questionId": "",
+    "choiceId": "",
+    "operator": "equals"
+   },
+   {
+    "id": "n_out",
+    "type": "block",
+    "label": "Outcomes",
+    "children": [],
+    "blockId": "b_out",
+    "field": "",
+    "value": "",
+    "questionId": "",
+    "choiceId": "",
+    "operator": "equals"
+   },
+   {
+    "id": "n_debrief",
+    "type": "block",
+    "label": "Debrief",
+    "children": [],
+    "blockId": "b_debrief",
+    "field": "",
+    "value": "",
+    "questionId": "",
+    "choiceId": "",
+    "operator": "equals"
+   }
+  ],
+  "roots": [
+   "n_consent",
+   "n_br",
+   "n_pre",
+   "r1",
+   "n_chat",
+   "n_out",
+   "n_debrief"
+  ],
+  "assumptions": [
+   "Power: about 250 per arm to detect 0.35 at 80% power; the anti-spending effect of 0.23 (SE 0.454 at n=59) would need about 650 per cell at SD 1.49, so the design is sized to the interaction as the target.",
+   "Quota sampling gives equal pro and anti respondents per topic; topic (spending vs a second policy issue) is assigned at the start, with the topic-specific text shown in the consent/prior screens.",
+   "Online US panel; compensation per panel standard; 10-minute survey.",
+   "Keyword outcomes are coded from chatbot transcripts, not asked in the survey."
+  ],
+  "unresolved": [
+   "Choice of the second policy topic and the op-ed, placebo and chatbot texts for each topic and position must be written by the research team.",
+   "Topic assignment and quota logic must be implemented in the survey platform.",
+   "IRB approval and participant compensation must be supplied by the research team."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "title": "Source study package",
+    "url": "https://github.com/yrvelez/dialogue-through-disagreement",
+    "claim": "the source study this extension builds on",
+    "excerpt": "",
+    "origin": "supplied"
+   }
+  ]
+ }
+}

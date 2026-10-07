@@ -1,0 +1,564 @@
+{
+ "tool_version": "0.1.0",
+ "meta": {
+  "slug": "dialogue-through-disagreement",
+  "title": "Dialogue Through Disagreement? A Chatbot as a Measurement Device for Persuasion",
+  "authors": [
+   "Yamil R. Velez",
+   "Patrick Liu"
+  ],
+  "synthetic": false,
+  "release_status": "draft",
+  "repo_url": "https://github.com/yrvelez/dialogue-through-disagreement",
+  "branch": "main",
+  "package_at_root": true,
+  "n_raw": 449,
+  "n_analysis": 446
+ },
+ "pap_source": "author-supplied pap.json",
+ "data_columns": [
+  "row_id",
+  "treatment",
+  "group",
+  "toward_counterarg",
+  "certainty",
+  "counterarg_keyword",
+  "supportive_keyword"
+ ],
+ "categorical": [],
+ "exploratory": [],
+ "lit": {
+  "text": "Prior findings relevant to the study's hypotheses are limited. Adam et al. (2020) demonstrated that chatbot interactions in customer-service contexts can influence user compliance, offering indirect support for H1 that a chatbot paired with an op-ed can shift attitudes. Wuttke and Foos (2024) showed in a field experiment that targeted persuasion interventions can move citizens' democratic attitudes, which is methodologically analogous to H1 and H2. Pizzi et al. (2023) found that chatbot design features such as anthropomorphism and gaze direction shape user behavioral intentions, though their outcome variable is disclosure rather than attitude change. The retrieved set is thin for the specific hypotheses; most entries are general overviews of generative AI (Dwivedi et al., 2023; Ray, 2023) or address unrelated domains such as healthcare (Yu et al., 2023; Amugongo et al., 2025) and supply-chain automation (Flechsig et al., 2021). The one substantive tension is between Wuttke and Foos (2024), who find that persuasion interventions produce measurable attitude shifts in field settings, and the broader caution in the AI literature (Dwivedi et al., 2023) that generative-AI interactions may produce superficial engagement without durable attitude change. The study's design—comparing op-ed plus chatbot against op-ed alone—can speak directly to whether the chatbot component adds persuasive value beyond the text itself.",
+  "works": [
+   {
+    "id": "https://openalex.org/W4360620450",
+    "title": "Opinion Paper: “So what if ChatGPT wrote it?” Multidisciplinary perspectives on opportunities, challenges and implications of generative conversational AI for research, practice and policy",
+    "authors": [
+     "Yogesh Kumar Dwivedi",
+     "Nir Kshetri",
+     "Laurie Hughes",
+     "Emma Louise Slade"
+    ],
+    "year": 2023,
+    "doi": "10.1016/j.ijinfomgt.2023.102642",
+    "venue": "International Journal of Information Management",
+    "cited_by": 4451,
+    "abstract": "Transformative artificially intelligent tools, such as ChatGPT, designed to generate sophisticated text indistinguishable from that produced by a human, are applicable across a wide range of contexts. The technology presents opportunities as well as, often ethical and legal, challenges, and has the potential for both positive and negative impacts for organisations, society, and individuals. Offeri",
+    "stance": "supporting",
+    "query": "conversational AI chatbot persuasion attitude change effectiveness"
+   },
+   {
+    "id": "https://openalex.org/W3081261125",
+    "title": "Consumers and Artificial Intelligence: An Experiential Perspective",
+    "authors": [
+     "Stefano Puntoni",
+     "Rebecca Walker Reczek",
+     "Markus Giesler",
+     "Simona Botti"
+    ],
+    "year": 2020,
+    "doi": "10.1177/0022242920953847",
+    "venue": "Journal of Marketing",
+    "cited_by": 1194,
+    "abstract": "Artificial intelligence (AI) helps companies offer important benefits to consumers, such as health monitoring with wearable devices, advice with recommender systems, peace of mind with smart household products, and convenience with voice-activated virtual assistants. However, although AI can be seen as a neutral tool to be evaluated on efficiency and accuracy, this approach does not consider the s",
+    "stance": "supporting",
+    "query": "conversational AI chatbot persuasion attitude change effectiveness"
+   },
+   {
+    "id": "https://openalex.org/W3012220842",
+    "title": "AI-based chatbots in customer service and their effects on user compliance",
+    "authors": [
+     "Martin Adam",
+     "Michael Wessel",
+     "Alexander Benlian"
+    ],
+    "year": 2020,
+    "doi": "10.1007/s12525-020-00414-7",
+    "venue": "Electronic Markets",
+    "cited_by": 1187,
+    "abstract": "Abstract Communicating with customers through live chat interfaces has become an increasingly popular means to provide real-time customer service in many e-commerce settings. Today, human chat service agents are frequently replaced by conversational software agents or chatbots, which are systems designed to communicate with human users by means of natural language often based on artificial intelli",
+    "stance": "supporting",
+    "query": "conversational AI chatbot persuasion attitude change effectiveness"
+   },
+   {
+    "id": "https://openalex.org/W3197237886",
+    "title": "Robotic Process Automation in purchasing and supply management: A multiple case study on potentials, barriers, and implementation",
+    "authors": [
+     "Christian Flechsig",
+     "Franziska Anslinger",
+     "Rainer Lasch"
+    ],
+    "year": 2021,
+    "doi": "10.1016/j.pursup.2021.100718",
+    "venue": "Journal of Purchasing and Supply Management",
+    "cited_by": 225,
+    "abstract": "Robotic Process Automation (RPA) has received growing attention within the digital transformation as this cutting-edge technology automates human behavior and promises high potentials. However, the adoption in purchasing and supply management (PSM) is still in its infancy and has hardly been explored, particularly in the public sector. Based on a multiple case study including 19 organizations of t",
+    "stance": "contesting",
+    "query": "AI chatbot persuasion resistance skepticism human-AI interaction limitations"
+   },
+   {
+    "id": "https://openalex.org/W4360846436",
+    "title": "I, chatbot! the impact of anthropomorphism and gaze direction on willingness to disclose personal information and behavioral intentions",
+    "authors": [
+     "Gabriele Pizzi",
+     "Virginia Vannucci",
+     "Valentina Mazzoli",
+     "Raffaele Donvito"
+    ],
+    "year": 2023,
+    "doi": "10.1002/mar.21813",
+    "venue": "Psychology and Marketing",
+    "cited_by": 186,
+    "abstract": "Abstract The present research focuses on the interplay between two common features of the customer service chatbot experience: gaze direction and anthropomorphism. Although the dominant approach in marketing theory and practice is to make chatbots as human‐like as possible, the current study, built on the humanness‐value‐loyalty model, addresses the chain of effects through which chatbots' nonverb",
+    "stance": "contesting",
+    "query": "AI chatbot persuasion resistance skepticism human-AI interaction limitations"
+   },
+   {
+    "id": "https://openalex.org/W4400088228",
+    "title": "Making the case for democracy: A field-experiment on democratic persuasion",
+    "authors": [
+     "Alexander Wuttke",
+     "Florian Foos"
+    ],
+    "year": 2024,
+    "doi": "10.1111/1475-6765.12705",
+    "venue": "European Journal of Political Research",
+    "cited_by": 9,
+    "abstract": "Abstract Ordinary citizens can serve as a critical defence against democratic backsliding. But beneath the surface, citizens' commitment to democracy is sometimes fragile, with crises exacerbating existing anxieties. We introduce ‘democratic persuasion’ as an actionable intervention to foster the resilience of citizens' commitment to liberal democracy. ‘Democratic persuasion’ seizes the opportunit",
+    "stance": "contesting",
+    "query": "chatbot interaction superficial engagement no deliberation null effect persuasion"
+   },
+   {
+    "id": "https://openalex.org/W4392679398",
+    "title": "Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context",
+    "authors": [
+     "Gemini Robotics Team",
+     "Petko Georgiev",
+     "Ving Ian Lei",
+     "Ryan Burnell"
+    ],
+    "year": 2024,
+    "doi": "10.48550/arxiv.2403.05530",
+    "venue": "arXiv (Cornell University)",
+    "cited_by": 296,
+    "abstract": "In this report, we introduce the Gemini 1.5 family of models, representing the next generation of highly compute-efficient multimodal models capable of recalling and reasoning over fine-grained information from millions of tokens of context, including multiple long documents and hours of video and audio. The family includes two new models: (1) an updated Gemini 1.5 Pro, which exceeds the February ",
+    "stance": "method",
+    "query": "keyword recall content analysis chatbot conversation persuasion experimental design"
+   },
+   {
+    "id": "https://openalex.org/W4387809804",
+    "title": "Leveraging Generative AI and Large Language Models: A Comprehensive Roadmap for Healthcare Integration",
+    "authors": [
+     "Ping Yu",
+     "Hua Xu",
+     "Xia Hu",
+     "Chao Deng"
+    ],
+    "year": 2023,
+    "doi": "10.3390/healthcare11202776",
+    "venue": "Healthcare",
+    "cited_by": 261,
+    "abstract": "Generative artificial intelligence (AI) and large language models (LLMs), exemplified by ChatGPT, are promising for revolutionizing data and information management in healthcare and medicine. However, there is scant literature guiding their integration for non-AI professionals. This study conducts a scoping literature review to address the critical need for guidance on integrating generative AI an",
+    "stance": "method",
+    "query": "keyword recall content analysis chatbot conversation persuasion experimental design"
+   },
+   {
+    "id": "https://openalex.org/W4411203672",
+    "title": "Retrieval augmented generation for large language models in healthcare: A systematic review",
+    "authors": [
+     "Lameck Mbangula Amugongo",
+     "Pietro Mascheroni",
+     "Steven Brooks",
+     "Stefan Doering"
+    ],
+    "year": 2025,
+    "doi": "10.1371/journal.pdig.0000877",
+    "venue": "PLOS Digital Health",
+    "cited_by": 246,
+    "abstract": "Large Language Models (LLMs) have demonstrated promising capabilities to solve complex tasks in critical sectors such as healthcare. However, LLMs are limited by their training data which is often outdated, the tendency to generate inaccurate (\"hallucinated\") content and a lack of transparency in the content they generate. To address these limitations, retrieval augmented generation (RAG) grounds ",
+    "stance": "method",
+    "query": "keyword recall content analysis chatbot conversation persuasion experimental design"
+   },
+   {
+    "id": "https://openalex.org/W4365512576",
+    "title": "ChatGPT: A comprehensive review on background, applications, key challenges, bias, ethics, limitations and future scope",
+    "authors": [
+     "Partha Pratim Ray"
+    ],
+    "year": 2023,
+    "doi": "10.1016/j.iotcps.2023.04.003",
+    "venue": "Internet of Things and Cyber-Physical Systems",
+    "cited_by": 2474,
+    "abstract": "In recent years, artificial intelligence (AI) and machine learning have been transforming the landscape of scientific research. Out of which, the chatbot technology has experienced tremendous advancements in recent years, especially with ChatGPT emerging as a notable AI language model. This comprehensive review delves into the background, applications, key challenges, and future directions of Chat",
+    "stance": "citing",
+    "query": "cites:W4360620450"
+   }
+  ],
+  "queries": [
+   "conversational AI chatbot persuasion attitude change effectiveness",
+   "deliberation counterargument generation certainty reduction attitude",
+   "AI chatbot persuasion resistance skepticism human-AI interaction limitations",
+   "chatbot interaction superficial engagement no deliberation null effect persuasion",
+   "keyword recall content analysis chatbot conversation persuasion experimental design"
+  ],
+  "query_sets": {
+   "supporting": [
+    "conversational AI chatbot persuasion attitude change effectiveness",
+    "deliberation counterargument generation certainty reduction attitude"
+   ],
+   "contesting": [
+    "AI chatbot persuasion resistance skepticism human-AI interaction limitations",
+    "chatbot interaction superficial engagement no deliberation null effect persuasion"
+   ],
+   "method": [
+    "keyword recall content analysis chatbot conversation persuasion experimental design"
+   ]
+  },
+  "debate_hint": "Whether a chatbot-mediated interaction adds persuasive value beyond the text it accompanies, or merely produces superficial engagement without durable attitude change.",
+  "degraded": null
+ },
+ "tags": [
+  {
+   "analysis_id": "H1",
+   "kind": "hypothesis",
+   "tag": "unregistered",
+   "differences": [],
+   "interpretations": [],
+   "justification": ""
+  },
+  {
+   "analysis_id": "H2",
+   "kind": "hypothesis",
+   "tag": "unregistered",
+   "differences": [],
+   "interpretations": [],
+   "justification": ""
+  },
+  {
+   "analysis_id": "H3",
+   "kind": "hypothesis",
+   "tag": "unregistered",
+   "differences": [],
+   "interpretations": [],
+   "justification": ""
+  },
+  {
+   "analysis_id": "H4",
+   "kind": "hypothesis",
+   "tag": "unregistered",
+   "differences": [],
+   "interpretations": [],
+   "justification": ""
+  },
+  {
+   "analysis_id": "S1",
+   "kind": "subgroup",
+   "tag": "unregistered",
+   "differences": [],
+   "justification": ""
+  }
+ ],
+ "sections": {
+  "takeaways": [
+   "Reading an op-ed against one's own position, then chatting with a chatbot, moved support toward the op-ed by 0.64 scale points (95% CI [0.37, 0.91]) relative to a placebo article plus chatbot.",
+   "Certainty in position was 5.3 points lower after the op-ed (95% CI [−8.9, −1.7], p = 0.004), a post hoc finding.",
+   "Op-ed keyword use in the chatbot conversation was higher: counterargument keywords by 16.6 percentage points (95% CI [9.8, 23.4]), supportive keywords by 26.7 percentage points (95% CI [19.5, 33.8]).",
+   "Only 59 participants held the anti-spending position, so the by-group comparison is inconclusive; the interaction estimate was 0.42 (p = 0.37).",
+   "None of the tests was pre-registered and none was corrected for multiple comparisons, so treat all results as post hoc."
+  ],
+  "abstract": "Can a chatbot conversation serve as a measurement device for persuasion, and does an op-ed against a reader's own position change attitudes? We analyse an online survey experiment with US panelists (449 recruited, 446 analysed). Participants read either an op-ed arguing against their own position or an unrelated placebo article, and then talked with a chatbot. The op-ed group moved 0.64 scale points toward the op-ed position (95% CI [0.37, 0.91], p < 0.001) and reported certainty 5.3 points lower (95% CI [−8.9, −1.7], p = 0.004). Their chatbot conversations also used op-ed keywords more often: 16.6 percentage points more for counterargument keywords and 26.7 percentage points more for supportive keywords (both p < 0.001). The effect was clear among pro-spending participants but inconclusive among the 59 anti-spending participants. The analysis plan was reconstructed post hoc and not pre-registered, and no test was corrected for multiplicity.",
+  "design_notes": "Participants in a US online panel were randomly assigned to read an op-ed against their own position or an unrelated placebo article, and then held a chatbot conversation. Of 449 raw respondents, 446 entered the analysis. The attitude and certainty models used 439 because of missing values. The Placebo + chatbot group is the control. The plan was reconstructed after the fact from a published replication script, so every test is post hoc, including the heterogeneity analysis. All p-values are two-sided.",
+  "results": {
+   "H1": "Support moved toward the op-ed position by 0.64 scale points more in the Op-ed + chatbot arm than in the Placebo + chatbot arm (95% CI [0.37, 0.91], two-sided p < 0.001, n = 439). This is the central persuasion result. Both arms received the chatbot, so it cannot isolate the chatbot's own contribution.",
+   "H2": "Certainty in position was lower in the Op-ed + chatbot arm by 5.3 points (95% CI [−8.9, −1.7], two-sided p = 0.004, n = 439). The interval is wide, so the size of the drop is uncertain, though the direction is consistent with the op-ed unsettling prior views.",
+   "H3": "Chatbot conversations in the Op-ed + chatbot arm were more likely to use counterargument keywords, by 0.166 on the proportion scale, or 16.6 percentage points (95% CI [9.8, 23.4], two-sided p < 0.001, n = 446). Keyword use was higher in the op-ed arm, which may reflect echoing of the op-ed rather than adoption of its arguments.",
+   "H4": "Supportive keyword use was also higher in the Op-ed + chatbot arm, by 0.267, or 26.7 percentage points (95% CI [19.5, 33.8], two-sided p < 0.001, n = 446). The point estimate was larger than for counterargument keywords, though no test of the difference was run and the intervals overlap.",
+   "S1": "In this post hoc heterogeneity analysis, among pro-spending participants (n = 380) the effect on movement toward the op-ed position was 0.66 (p < 0.001). Among anti-spending participants (n = 59) it was 0.23 (p = 0.61), which is not distinguishable from zero given the small group. The difference between groups was 0.42 (p = 0.37) and is inconclusive."
+  },
+  "exploratory": {},
+  "limitations": "The plan was reconstructed after the analysis and not pre-registered, so all four hypotheses and the group comparison are post hoc and uncorrected for multiple testing. The control arm also received the chatbot (Placebo + chatbot), so the design cannot speak to the chatbot's added persuasive value or separate it from the op-ed's. Attitudes were measured shortly after exposure, so durability is unknown. The anti-spending group is small (59), which leaves the moderation result inconclusive. The sample is an online panel in the US, and results may not generalise. Keyword measures may reflect echoing of the op-ed rather than changed belief.",
+  "revision_notes": [
+   "K1: Abstract now says 'percentage points' for the keyword effects.",
+   "K2: H3 now says keyword use was higher and may reflect echoing, dropping the 'carried arguments' claim.",
+   "K3: H4 now says the point estimate was larger, with no tested difference and overlapping intervals noted.",
+   "K4: No Related work section appears in these narrative sections; the design is stated throughout as Op-ed + chatbot versus Placebo + chatbot, and H1 and the limitations note that the chatbot's contribution cannot be isolated.",
+   "G1: 'Percentage points' used consistently for H3 and H4 in the abstract, takeaways and results.",
+   "G2: Related work is not in this JSON; the control is described as Placebo + chatbot wherever the comparison appears.",
+   "G3: Heterogeneity is labelled post hoc in design notes and S1; the skeleton's headings, 'Plan match' and figure names are outside this JSON and need relabelling there.",
+   "R1: Keyword effects now given as 0.166 and 0.267 proportions, equivalent to 16.6 and 26.7 percentage points, in H3 and H4; the abstract and takeaways use 'percentage points'.",
+   "R2: The design is stated as op-ed plus chatbot versus placebo plus chatbot, and H1 and the limitations say it cannot isolate the chatbot's contribution.",
+   "R3: Plan match header is in the skeleton, not this JSON; design notes state that no analysis was registered.",
+   "R4: S1 is now described as a post hoc heterogeneity analysis; the heading and figure caption rename belongs in the skeleton.",
+   "F1: The related-work sentence is not in this JSON. The limitations now say the control is Placebo + chatbot, so the design cannot speak to the chatbot's added value; the flagged sentence should be replaced with that statement in the skeleton."
+  ]
+ },
+ "extensions": [
+  {
+   "qsf": "extensions/advance_design.qsf",
+   "qsf_errors": [],
+   "media": [],
+   "id": "advance_design",
+   "kind": "mechanism",
+   "title": "Validating conversation keywords against attitudes, with a no-chat arm and delayed follow-up",
+   "brief_id": "advance_design",
+   "mode": "survey_experiment",
+   "debate": "D1",
+   "why": "Addresses design and measurement: a no-chatbot arm identifies the chatbot's contribution, a pre-chat attitude measure ties keywords to belief change, and a wave 2 tests durability.",
+   "power_target": {
+    "n_per_arm": 215,
+    "mde": 0.4,
+    "basis": "H1 MDE 0.3985 at 224/215 per arm; observed 0.638. Because the chat increment is likely smaller than the full effect, consider about 400 per arm."
+   },
+   "rationale": "In the source study both arms chatted, so the 0.64-point shift (95% CI [0.37, 0.91]) cannot be split between the op-ed and the chatbot. Keyword gaps of 16.6 and 26.7 percentage points may reflect echoing of the op-ed rather than changed belief, and attitudes were measured only once, right after exposure.",
+   "contribution": "Identifies the chatbot's added effect beyond the op-ed text, checks whether keyword use tracks real attitude change, and tests whether the effect lasts.",
+   "addresses": [],
+   "validated_by": "autoexperiment",
+   "status": "proposed",
+   "built_at": null,
+   "survey_id": null,
+   "survey_url": null,
+   "hypothesis": "If conversation adds persuasion beyond the text, the op-ed+chat arm will shift attitudes more than the op-ed-only arm, and the difference will persist at 2 weeks. If it does not, the arms will not differ, or the chat-driven difference will fade. Within the op-ed+chat arm, argument-adoption coding should predict attitude shift better than keyword counts.",
+   "primary_outcome": "Immediate change in support toward the op-ed position (post minus pre), with the 2-week change as the durability outcome.",
+   "comparison": "Op-ed+chatbot versus op-ed only (chatbot increment); op-ed versus placebo (text effect); wave 2 versus wave 1 change; keyword and adoption measures as predictors of shift within the op-ed+chat arm.",
+   "conditions": [
+    "Op-ed + chatbot",
+    "Op-ed only",
+    "Placebo + chatbot",
+    "Placebo only"
+   ],
+   "unresolved": [
+    "Op-ed and placebo article texts, chatbot configuration and keyword dictionary must be supplied by the research team.",
+    "IRB approval number and compensation, including the wave 2 bonus, must be supplied.",
+    "Wave 2 is fielded as a separate session; the flow here lists it in sequence."
+   ],
+   "label": "Design advance",
+   "text": "extensions/advance_design.txt",
+   "svg": "extensions/advance_design.svg"
+  },
+  {
+   "qsf": "extensions/generalizability_conditional.qsf",
+   "qsf_errors": [],
+   "media": [],
+   "id": "generalizability_conditional",
+   "kind": "boundary",
+   "title": "Oversampling the anti-spending position and varying topic",
+   "brief_id": "generalizability_conditional",
+   "mode": "survey_experiment",
+   "debate": null,
+   "why": "Addresses sample and power: the anti-spending group (n=59) could not test moderation (interaction p=0.37).",
+   "power_target": {
+    "n_per_arm": 250,
+    "mde": 0.35,
+    "basis": "Anti-spending effect of 0.23 (SE 0.454 at n=59); detecting 0.23 needs about 650 per cell at SD 1.49, so 250 per arm detects only about 0.35 within a subgroup. Size to the interaction as the target."
+   },
+   "rationale": "The source op-ed effect was 0.64 points overall, but only 59 participants were anti-spending (effect 0.232, SE 0.454), and the position interaction was 0.425 (p=0.37), so moderation is untested. Only one topic (spending) was used, so topic generality is unknown.",
+   "contribution": "Tests whether the op-ed plus chatbot effect holds for anti-spending respondents and on a second, unrelated policy topic, using adequately powered interaction tests.",
+   "addresses": [],
+   "validated_by": "autoexperiment",
+   "status": "proposed",
+   "built_at": null,
+   "survey_id": null,
+   "survey_url": null,
+   "hypothesis": "The op-ed moves attitudes toward the op-ed position relative to placebo in both position groups and on both topics. The treatment by position and treatment by topic interactions are small relative to the main effect.",
+   "primary_outcome": "Support moved toward the op-ed position (1-7 recoded), as in the source study.",
+   "comparison": "Op-ed + chatbot versus placebo + chatbot, with interactions of treatment with prior position (pro vs anti) and with topic.",
+   "conditions": [
+    "Op-ed + chatbot",
+    "Placebo + chatbot"
+   ],
+   "unresolved": [
+    "Choice of the second policy topic and the op-ed, placebo and chatbot texts for each topic and position must be written by the research team.",
+    "Topic assignment and quota logic must be implemented in the survey platform.",
+    "IRB approval and participant compensation must be supplied by the research team."
+   ],
+   "label": "Generalizability",
+   "text": "extensions/generalizability_conditional.txt",
+   "svg": "extensions/generalizability_conditional.svg"
+  },
+  {
+   "qsf": "extensions/theoretical_debate.qsf",
+   "qsf_errors": [],
+   "media": [
+    "oped: image stimulus to supply (the op-ed article text arguing against the participant's spending position)",
+    "chat_arg: image stimulus to supply (embedded chat window with an assistant that argues the op-ed's side)",
+    "chat_neu: image stimulus to supply (embedded chat window with an assistant that asks only neutral questions)"
+   ],
+   "id": "theoretical_debate",
+   "kind": "alternative",
+   "title": "Chatbot as persuader versus passive measurement",
+   "brief_id": "theoretical_debate",
+   "mode": "survey_experiment",
+   "debate": "D1",
+   "why": "Addresses design and framing by discriminating between the 'adds value' and 'superficial engagement' positions of D1.",
+   "power_target": {
+    "n_per_arm": 400,
+    "mde": 0.28,
+    "basis": "Chat increment is expected to be at most about half the observed 0.64; the SD of 1.49 from the H1 row gives MDE about 0.29 at 400 per arm."
+   },
+   "rationale": "The source study gave the chatbot to both arms, so the 0.64-point shift (SD about 1.49 in H1) cannot be attributed to the chatbot rather than the op-ed. Attitudes were also measured only right after exposure. This design randomises the chatbot's role after the same op-ed and adds a 1-week follow-up.",
+   "contribution": "Separates the chatbot's persuasive role from the op-ed's effect and tests whether any added shift lasts.",
+   "addresses": [],
+   "validated_by": "autoexperiment",
+   "status": "proposed",
+   "built_at": null,
+   "survey_id": null,
+   "survey_url": null,
+   "hypothesis": "If conversation adds persuasive value (position a), the arguing chatbot arm shows more shift toward the op-ed than both other arms. If engagement is superficial (position b), the arms do not differ and any shift decays by 1 week.",
+   "primary_outcome": "Support moved toward the op-ed position (1-7, recoded so higher means closer to the op-ed), immediate and at 1 week.",
+   "comparison": "Arguing chatbot vs neutral chatbot vs static task on immediate and 1-week shift; the arguing vs static contrast is the main one.",
+   "conditions": [
+    "Arguing chatbot",
+    "Neutral chatbot",
+    "Static task"
+   ],
+   "unresolved": [
+    "The op-ed text, the chatbot prompts and the hosting of the chat widget must be supplied by the research team.",
+    "IRB approval number and compensation levels need to be supplied.",
+    "The follow-up link delivery and panel re-contact mechanism need to be arranged."
+   ],
+   "label": "Theoretical debate",
+   "text": "extensions/theoretical_debate.txt",
+   "svg": "extensions/theoretical_debate.svg"
+  }
+ ],
+ "sections_draft": {
+  "takeaways": [
+   "Reading an op-ed against one's own position, then chatting with a chatbot, moved support toward the op-ed by 0.64 scale points (95% CI [0.37, 0.91]) relative to a placebo article plus chatbot.",
+   "Certainty in position was 5.3 points lower after the op-ed (95% CI [−8.9, −1.7], p = 0.004), a post hoc finding.",
+   "Recall of op-ed keywords in the chatbot conversation was higher: counterargument keywords by 16.6 points (95% CI [9.8, 23.4]), supportive keywords by 26.7 points (95% CI [19.5, 33.8]).",
+   "Only 59 participants held the anti-spending position, so the by-group comparison is inconclusive; the interaction estimate was 0.42 (p = 0.37).",
+   "None of the tests was pre-registered and none was corrected for multiple comparisons, so treat all results as post hoc."
+  ],
+  "abstract": "Can a chatbot conversation serve as a measurement device for persuasion, and does an op-ed against a reader's own position change attitudes? We analyse an online survey experiment with US panelists (449 recruited, 446 analysed). Participants read either an op-ed arguing against their own position or an unrelated placebo article, and then talked with a chatbot. The op-ed group moved 0.64 scale points toward the op-ed position (95% CI [0.37, 0.91], p < 0.001) and reported certainty 5.3 points lower (95% CI [−8.9, −1.7], p = 0.004). Their chatbot conversations also used more op-ed keywords: 16.6 points more for counterargument keywords and 26.7 points more for supportive keywords (both p < 0.001). The effect was clear among pro-spending participants but inconclusive among the 59 anti-spending participants. The analysis plan was reconstructed post hoc and not pre-registered, and no test was corrected for multiplicity.",
+  "design_notes": "Participants in a US online panel were randomly assigned to read an op-ed against their own position or an unrelated placebo article, and then held a chatbot conversation. Of 449 raw respondents, 446 entered the analysis. The attitude and certainty models used 439 because of missing values. The Placebo + chatbot group is the control. The plan was reconstructed after the fact from a published replication script, so every test is post hoc. All p-values are two-sided.",
+  "results": {
+   "H1": "Support moved toward the op-ed position by 0.64 scale points more in the Op-ed + chatbot arm than in the Placebo + chatbot arm (95% CI [0.37, 0.91], two-sided p < 0.001, n = 439). This is the central persuasion result. It compares the op-ed arm with a placebo arm, and both received the chatbot, so it cannot isolate the chatbot's own contribution.",
+   "H2": "Certainty in position was lower in the Op-ed + chatbot arm by 5.3 points (95% CI [−8.9, −1.7], two-sided p = 0.004, n = 439). The interval is wide, so the size of the drop is uncertain, though the direction is consistent with the op-ed unsettling prior views.",
+   "H3": "Chatbot conversations in the Op-ed + chatbot arm were more likely to use counterargument keywords, by 16.6 percentage points (95% CI [9.8, 23.4], two-sided p < 0.001, n = 446). This suggests participants carried the op-ed's arguments into the conversation.",
+   "H4": "Supportive keyword recall was also higher in the Op-ed + chatbot arm, by 26.7 percentage points (95% CI [19.5, 33.8], two-sided p < 0.001, n = 446). The change runs in the same direction as for counterargument keywords, and it was larger.",
+   "S1": "Among pro-spending participants (n = 380) the effect on movement toward the op-ed position was 0.66 (p < 0.001). Among anti-spending participants (n = 59) it was 0.23 (p = 0.61), which is not distinguishable from zero given the small group. The difference between groups was 0.42 (p = 0.37) and is inconclusive."
+  },
+  "exploratory": {},
+  "limitations": "The plan was reconstructed after the analysis and not pre-registered, so all four hypotheses and the group comparison are post hoc and uncorrected for multiple testing. The control arm also received the chatbot, so the design cannot separate the chatbot's persuasive contribution from the op-ed's. Attitudes were measured shortly after exposure, so durability is unknown. The anti-spending group is small (59), which leaves the moderation result inconclusive. The sample is an online panel in the US, and results may not generalise to other populations or topics. Keyword measures capture what participants wrote and may reflect echoing of the op-ed rather than changed belief."
+ },
+ "potential": {
+  "got_right": [
+   "Random assignment to an op-ed against the respondent's own position versus a placebo article, with the chatbot in both arms, so the op-ed effect is cleanly identified (H1 0.64, 95% CI [0.37, 0.91]).",
+   "Tied the attitude result to a behavioural trace in the conversation: op-ed keyword use rose by 16.6 pp (counterargument) and 26.7 pp (supportive), both well above their MDEs.",
+   "Reported HC2 intervals, the n lost to missing values (446 to 439) and the underpowered anti-spending subgroup (n=59, interaction p=0.37) without overclaiming.",
+   "Open data and a replication script, so the post hoc plan can be audited."
+  ],
+  "why_it_did_not_land": [
+   {
+    "cause": "design",
+    "detail": "Both arms get the chatbot, so the study cannot say whether the chatbot works as a measurement device or adds persuasion. The title question is untested.",
+    "evidence": "Placebo + chatbot is the control; the Limitations section concedes the chatbot's contribution cannot be separated."
+   },
+   {
+    "cause": "measurement",
+    "detail": "Keyword use may be echo of the op-ed rather than adopted belief. Supportive keywords (own side) rose more than counterargument keywords, which fits echoing or topic priming better than persuasion.",
+    "evidence": "H4 0.267 vs H3 0.166, control means 0.08 and 0.09; no validation against attitudes."
+   },
+   {
+    "cause": "power",
+    "detail": "The certainty effect is barely above the detectable threshold, so its size is uncertain. The anti-spending subgroup is far too small to test moderation.",
+    "evidence": "H2 observed/MDE = 1.03 (-5.31 vs 5.15); S1 anti-spending n=59, interaction 0.425, p=0.372."
+   },
+   {
+    "cause": "framing",
+    "detail": "No pre-registration and no multiplicity correction; the plan was reconstructed from the replication script. All results are post hoc, and the claim check returned major_revision.",
+    "evidence": "Registration status 'none'; analysis_tags all 'unregistered'."
+   },
+   {
+    "cause": "sample",
+    "detail": "Outcomes were measured right after exposure in one US panel, and only 13% of the sample held the anti-spending position, so durability and generality are unknown.",
+    "evidence": "S1 n=59 vs 380; single-wave design."
+   }
+  ],
+  "debates": [
+   {
+    "id": "D1",
+    "label": "Does the chatbot add persuasion beyond the text?",
+    "position_a": "Conversational interaction adds persuasive or compliance value beyond static text.",
+    "position_b": "Chatbot interaction yields superficial engagement; any attitude shift comes from the text and may not last.",
+    "what_this_study_says": "It cannot tell. The chatbot is in both arms, so the 0.64 effect is attributable to the op-ed and the chatbot's marginal contribution is unidentified. The retrieved works are mostly customer-service or general AI papers, so the debate is only weakly grounded.",
+    "works": [
+     {
+      "id": "10.1007/s12525-020-00414-7",
+      "side": "a"
+     },
+     {
+      "id": "10.1111/1475-6765.12705",
+      "side": "neutral"
+     },
+     {
+      "id": "10.1016/j.iotcps.2023.04.003",
+      "side": "b"
+     },
+     {
+      "id": "10.1016/j.ijinfomgt.2023.102642",
+      "side": "b"
+     }
+    ]
+   }
+  ],
+  "briefs": [
+   {
+    "id": "advance_design",
+    "kind_legacy": "mechanism",
+    "mode": "survey_experiment",
+    "title": "Validating conversation keywords against attitudes, with a no-chat arm and delayed follow-up",
+    "question": "Do op-ed keywords in chatbot conversations track genuine attitude change, and does the chat add to the op-ed's effect?",
+    "why_this_fixes_the_failure": "Addresses design and measurement: a no-chatbot arm identifies the chatbot's contribution, a pre-chat attitude measure ties keywords to belief change, and a wave 2 tests durability.",
+    "debate": "D1",
+    "addresses": [],
+    "design_sketch": "Randomise to op-ed+chatbot, op-ed only, placebo+chatbot, placebo only. Measure attitude and certainty before and immediately after, and again at about 2 weeks. Code keywords with the existing dictionary plus a blinded human or LLM coding of argument adoption versus echo. Test whether keyword use mediates or predicts attitude shift within the op-ed arms.",
+    "moderator_or_condition": null,
+    "power_target": {
+     "n_per_arm": 215,
+     "mde": 0.4,
+     "basis": "H1 MDE 0.3985 at 224/215 per arm; observed 0.638. Because the chat increment is likely smaller than the full effect, consider about 400 per arm."
+    },
+    "needs_qsf": true
+   },
+   {
+    "id": "theoretical_debate",
+    "kind_legacy": "alternative",
+    "mode": "survey_experiment",
+    "title": "Chatbot as persuader versus passive measurement",
+    "question": "Does the chatbot's conversational role (challenging, neutral, or absent) change attitude shift after the same op-ed?",
+    "why_this_fixes_the_failure": "Addresses design and framing by discriminating between the 'adds value' and 'superficial engagement' positions of D1.",
+    "debate": "D1",
+    "addresses": [],
+    "design_sketch": "All participants read the op-ed. Randomise to a chatbot that argues back, a chatbot that only asks neutral questions, or a static comparison task of equal length. Outcome is attitude change at once and at 1 week. If position a holds, the arguing chatbot beats the other two; if position b holds, the arms are equal and the effect decays.",
+    "moderator_or_condition": null,
+    "power_target": {
+     "n_per_arm": 400,
+     "mde": 0.28,
+     "basis": "Chat increment is expected to be at most about half the observed 0.64; the SD of 1.49 from the H1 row gives MDE about 0.29 at 400 per arm."
+    },
+    "needs_qsf": true
+   },
+   {
+    "id": "generalizability_conditional",
+    "kind_legacy": "boundary",
+    "mode": "survey_experiment",
+    "title": "Oversampling the anti-spending position and varying topic",
+    "question": "Does the op-ed plus chatbot effect hold for respondents opposed to the spending position and on other issues?",
+    "why_this_fixes_the_failure": "Addresses sample and power: the anti-spending group (n=59) could not test moderation (interaction p=0.37).",
+    "debate": null,
+    "addresses": [],
+    "design_sketch": "Recruit equal numbers of pro- and anti-spending respondents and add a second, unrelated policy topic. Use the same op-ed versus placebo contrast, with the chatbot in both arms. Estimate the treatment by position and treatment by topic interactions.",
+    "moderator_or_condition": "Prior position (pro vs anti spending) and issue topic",
+    "power_target": {
+     "n_per_arm": 250,
+     "mde": 0.35,
+     "basis": "Anti-spending effect of 0.23 (SE 0.454 at n=59); detecting 0.23 needs about 650 per cell at SD 1.49, so 250 per arm detects only about 0.35 within a subgroup. Size to the interaction as the target."
+    },
+    "needs_qsf": true
+   }
+  ],
+  "verdict": "A follow-up is worth running. The op-ed effect is solid (H1 1.6x MDE), but the study cannot answer its titular question about the chatbot, because every arm had one. Run advance_design first: it adds no-chat arms, validates the keyword measure against pre/post attitudes and adds a delayed wave, which resolves the main design and measurement gaps. The literature offers only a thin debate, with mostly off-topic retrieved works, so ground the theory in persuasion and LLM-dialogue papers before preregistering.",
+  "model": "anthropic/claude-sonnet-5.5"
+ }
+}

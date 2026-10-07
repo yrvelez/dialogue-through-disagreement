@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 438" width="100%" role="img" aria-labelledby="fd-title fd-desc"><title id="fd-title">Design: survey experiment</title><desc id="fd-desc">A survey experiment on online panel respondents in US (N = 446 analysed). Respondents are randomly assigned to 2 arms: Op-ed + chatbot, against the control group Placebo + chatbot. Op-ed + chatbot: Op-ed against own position, then chatbot conversation Outcomes: Support moved toward op-ed position, Certainty in position, Recall uses op-ed keyword (opposing side), Recall uses op-ed keyword (own side). Registered moderators: group.</desc><style>
+:root{--fd-ink:#1c1b19;--fd-muted:#8a877f;--fd-rule:#d9d5cc;--fd-accent:#8b1e2d;--fd-bg:#ffffff}
+@media (prefers-color-scheme: dark){:root{--fd-ink:#ecebe6;--fd-muted:#b4b1a9;--fd-rule:#4a4a52;--fd-accent:#e08a96;--fd-bg:#1d1d23}}
+.box{fill:var(--fd-bg,#fff);stroke:var(--fd-ink,#1c1b19);stroke-width:1.2}
+.arm{fill:var(--fd-bg,#fff);stroke:var(--fd-accent,#8b1e2d);stroke-width:1.4}
+.soft{fill:var(--fd-bg,#fff);stroke:var(--fd-rule,#d9d5cc);stroke-width:1.2}
+text{font-family:Inter,Helvetica,Arial,sans-serif;fill:var(--fd-ink,#1c1b19);font-size:14px}
+.cap{font-size:12px;fill:var(--fd-muted,#8a877f)}
+.kicker{font-size:11px;letter-spacing:.08em;fill:var(--fd-muted,#8a877f);text-transform:uppercase}
+.edge{stroke:var(--fd-ink,#1c1b19);stroke-width:1.2;fill:none;marker-end:url(#fd-arrow)}
+.assoc{stroke-dasharray:5 4}
+#fd-arrow path{fill:var(--fd-ink,#1c1b19)}
+</style>
+<defs><marker id="fd-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z"/></marker></defs><text class="kicker" x="20" y="16">Design: survey experiment</text>
+<g>
+<rect class="box" x="20" y="83.0" width="230" height="66" rx="6"/>
+<text class="kicker" x="32" y="105.0">Population</text>
+<text x="32" y="123.0">online panel, US</text>
+</g>
+<polygon class="box" points="300,88.0 340,116.0 300,144.0 260,116.0"/>
+<text class="cap" x="300" y="120.0" text-anchor="middle">R</text>
+<path class="edge" d="M250,116.0 L258,116.0"/><text class="cap" x="254.0" y="110.0" text-anchor="middle">randomized</text>
+<g id="arm-0" data-text="Unrelated placebo article, then chatbot conversation">
+<rect class="box" x="400" y="30" width="250" height="96" rx="6"/>
+<text x="412" y="52">Placebo + chatbot (control</text>
+<text x="412" y="70">group)</text>
+<text class="cap" x="412" y="88">Unrelated placebo article, then</text>
+<text class="cap" x="412" y="103">chatbot conversation</text>
+</g>
+<path class="edge" d="M342,116.0 L396,78.0"/>
+<g id="arm-1" data-text="Op-ed against own position, then chatbot conversation">
+<rect class="arm" x="400" y="140" width="250" height="78" rx="6"/>
+<text x="412" y="162">Op-ed + chatbot</text>
+<text class="cap" x="412" y="180">Op-ed against own position, then</text>
+<text class="cap" x="412" y="195">chatbot conversation</text>
+</g>
+<path class="edge" d="M342,116.0 L396,179.0"/>
+<g>
+<rect class="box" x="700" y="30" width="230" height="84" rx="6"/>
+<text class="kicker" x="712" y="52">Outcome</text>
+<text x="712" y="70">Support moved toward op-ed</text>
+<text x="712" y="88">position</text>
+</g>
+<g>
+<rect class="box" x="700" y="124" width="230" height="66" rx="6"/>
+<text class="kicker" x="712" y="146">Outcome</text>
+<text x="712" y="164">Certainty in position</text>
+</g>
+<g>
+<rect class="box" x="700" y="200" width="230" height="84" rx="6"/>
+<text class="kicker" x="712" y="222">Outcome</text>
+<text x="712" y="240">Recall uses op-ed keyword</text>
+<text x="712" y="258">(opposing side)</text>
+</g>
+<g>
+<rect class="box" x="700" y="294" width="230" height="84" rx="6"/>
+<text class="kicker" x="712" y="316">Outcome</text>
+<text x="712" y="334">Recall uses op-ed keyword</text>
+<text x="712" y="352">(own side)</text>
+</g>
+<path class="edge" d="M650,116.0 L696,116.0"/><text class="cap" x="673.0" y="110.0" text-anchor="middle">effect</text>
+<text class="cap" x="400" y="412">Registered moderators: group</text></svg>

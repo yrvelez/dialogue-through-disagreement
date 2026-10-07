@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use these results, data or code, please cite them as below."
+title: "Dialogue Through Disagreement? A Chatbot as a Measurement Device for Persuasion"
+type: dataset
+authors:
+  - family-names: "Velez"
+    given-names: "Yamil R."
+  - family-names: "Liu"
+    given-names: "Patrick"
+date-released: "2026-10-07"
+repository-code: "https://github.com/yrvelez/dialogue-through-disagreement"
+abstract: "Unpublished study package (report, de-identified data, scripts and provenance) generated with filedrawer 0.1.0 and filed in The File Drawer."

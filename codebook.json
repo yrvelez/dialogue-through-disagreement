@@ -1,0 +1,190 @@
+{
+  "survey": {
+    "name": "",
+    "id": "",
+    "source": "csv-inferred"
+  },
+  "questions": [
+    {
+      "qid": "treatment",
+      "tag": "treatment",
+      "type": "unknown",
+      "selector": "",
+      "text": "",
+      "block": null,
+      "in_randomizer": false,
+      "free_text": false,
+      "columns": [
+        "treatment"
+      ],
+      "choices": [],
+      "rows": [],
+      "sub_selector": null
+    },
+    {
+      "qid": "group",
+      "tag": "group",
+      "type": "unknown",
+      "selector": "",
+      "text": "",
+      "block": null,
+      "in_randomizer": false,
+      "free_text": false,
+      "columns": [
+        "group"
+      ],
+      "choices": [],
+      "rows": [],
+      "sub_selector": null
+    },
+    {
+      "qid": "toward_counterarg",
+      "tag": "toward_counterarg",
+      "type": "unknown",
+      "selector": "",
+      "text": "",
+      "block": null,
+      "in_randomizer": false,
+      "free_text": false,
+      "columns": [
+        "toward_counterarg"
+      ],
+      "choices": [],
+      "rows": [],
+      "sub_selector": null
+    },
+    {
+      "qid": "certainty",
+      "tag": "certainty",
+      "type": "unknown",
+      "selector": "",
+      "text": "",
+      "block": null,
+      "in_randomizer": false,
+      "free_text": false,
+      "columns": [
+        "certainty"
+      ],
+      "choices": [],
+      "rows": [],
+      "sub_selector": null
+    },
+    {
+      "qid": "counterarg_keyword",
+      "tag": "counterarg_keyword",
+      "type": "unknown",
+      "selector": "",
+      "text": "",
+      "block": null,
+      "in_randomizer": false,
+      "free_text": false,
+      "columns": [
+        "counterarg_keyword"
+      ],
+      "choices": [],
+      "rows": [],
+      "sub_selector": null
+    },
+    {
+      "qid": "supportive_keyword",
+      "tag": "supportive_keyword",
+      "type": "unknown",
+      "selector": "",
+      "text": "",
+      "block": null,
+      "in_randomizer": false,
+      "free_text": false,
+      "columns": [
+        "supportive_keyword"
+      ],
+      "choices": [],
+      "rows": [],
+      "sub_selector": null
+    }
+  ],
+  "arms": {
+    "column": "treatment",
+    "values": [
+      "0",
+      "1"
+    ],
+    "stimuli": {},
+    "source": "pap",
+    "blocks": {}
+  },
+  "embedded_data": [],
+  "columns": [
+    {
+      "name": "treatment",
+      "qid": "treatment",
+      "kind": "question",
+      "dtype": "numeric",
+      "label": "",
+      "values": {},
+      "free_text": false,
+      "pii_flag": false,
+      "pii_reason": "",
+      "dropped": false
+    },
+    {
+      "name": "group",
+      "qid": "group",
+      "kind": "question",
+      "dtype": "text",
+      "label": "",
+      "values": {},
+      "free_text": false,
+      "pii_flag": false,
+      "pii_reason": "",
+      "dropped": false
+    },
+    {
+      "name": "toward_counterarg",
+      "qid": "toward_counterarg",
+      "kind": "question",
+      "dtype": "numeric",
+      "label": "",
+      "values": {},
+      "free_text": false,
+      "pii_flag": false,
+      "pii_reason": "",
+      "dropped": false
+    },
+    {
+      "name": "certainty",
+      "qid": "certainty",
+      "kind": "question",
+      "dtype": "numeric",
+      "label": "",
+      "values": {},
+      "free_text": false,
+      "pii_flag": false,
+      "pii_reason": "",
+      "dropped": false
+    },
+    {
+      "name": "counterarg_keyword",
+      "qid": "counterarg_keyword",
+      "kind": "question",
+      "dtype": "numeric",
+      "label": "",
+      "values": {},
+      "free_text": false,
+      "pii_flag": false,
+      "pii_reason": "",
+      "dropped": false
+    },
+    {
+      "name": "supportive_keyword",
+      "qid": "supportive_keyword",
+      "kind": "question",
+      "dtype": "numeric",
+      "label": "",
+      "values": {},
+      "free_text": false,
+      "pii_flag": false,
+      "pii_reason": "",
+      "dropped": false
+    }
+  ]
+}

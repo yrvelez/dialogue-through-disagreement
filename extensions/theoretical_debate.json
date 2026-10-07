@@ -1,0 +1,605 @@
+{
+ "id": "theoretical_debate",
+ "kind": "alternative",
+ "title": "Chatbot as persuader versus passive measurement",
+ "rationale": "The source study gave the chatbot to both arms, so the 0.64-point shift (SD about 1.49 in H1) cannot be attributed to the chatbot rather than the op-ed. Attitudes were also measured only right after exposure. This design randomises the chatbot's role after the same op-ed and adds a 1-week follow-up.",
+ "contribution": "Separates the chatbot's persuasive role from the op-ed's effect and tests whether any added shift lasts.",
+ "limitations": [
+  "Attrition at the 1-week follow-up may differ by arm.",
+  "Chatbot behaviour is scripted by prompt and may vary in quality across conversations.",
+  "The design has no placebo-article arm, so it cannot estimate the op-ed's own effect.",
+  "Only one topic (government spending) and a US panel are covered."
+ ],
+ "design": {
+  "title": "Chatbot role after an op-ed: arguing, neutral, or absent",
+  "overview": "All participants read an op-ed arguing against their own spending position and report their baseline position. They are then randomised to a chatbot that argues back, a chatbot that asks only neutral questions, or a static comparison task of equal length. Attitudes are measured immediately and again after 1 week.",
+  "hypothesis": "If conversation adds persuasive value (position a), the arguing chatbot arm shows more shift toward the op-ed than both other arms. If engagement is superficial (position b), the arms do not differ and any shift decays by 1 week.",
+  "primaryOutcome": "Support moved toward the op-ed position (1-7, recoded so higher means closer to the op-ed), immediate and at 1 week.",
+  "comparison": "Arguing chatbot vs neutral chatbot vs static task on immediate and 1-week shift; the arguing vs static contrast is the main one.",
+  "population": "US online panel adults who hold a position on government spending (pro or anti); recruit enough anti-spending respondents to be balanced. Re-contact after 7 days.",
+  "conditions": [
+   {
+    "id": "c_arg",
+    "title": "Arguing chatbot",
+    "description": "Chatbot challenges the participant's view and argues the op-ed's side.",
+    "nodeId": "arm_arg"
+   },
+   {
+    "id": "c_neu",
+    "title": "Neutral chatbot",
+    "description": "Chatbot asks only neutral open questions about the participant's views and does not argue.",
+    "nodeId": "arm_neu"
+   },
+   {
+    "id": "c_sta",
+    "title": "Static task",
+    "description": "Participant completes a written comparison task of equal length with no chatbot.",
+    "nodeId": "arm_sta"
+   }
+  ],
+  "blocks": [
+   {
+    "id": "b_consent",
+    "title": "Consent",
+    "questions": [
+     {
+      "id": "q_consent",
+      "type": "MC",
+      "text": "This survey has two parts, today and a short follow-up in one week. You will read an article and complete a short activity. Do you consent to participate?",
+      "tag": "consent",
+      "multiple": false,
+      "required": true,
+      "choices": [
+       {
+        "id": "yes",
+        "text": "I consent",
+        "recode": "1"
+       },
+       {
+        "id": "no",
+        "text": "I do not consent",
+        "recode": "0"
+       }
+      ],
+      "rows": [],
+      "sourceQuestionId": ""
+     }
+    ]
+   },
+   {
+    "id": "b_base",
+    "title": "Baseline and op-ed",
+    "questions": [
+     {
+      "id": "q_group",
+      "type": "MC",
+      "text": "Do you think the government should spend more or less on public services?",
+      "tag": "group",
+      "multiple": false,
+      "required": true,
+      "choices": [
+       {
+        "id": "pro",
+        "text": "More (pro-spending)",
+        "recode": "1"
+       },
+       {
+        "id": "anti",
+        "text": "Less (anti-spending)",
+        "recode": "0"
+       }
+      ],
+      "rows": [],
+      "sourceQuestionId": "group"
+     },
+     {
+      "id": "q_oped",
+      "type": "DB",
+      "text": "Please read the following article, which argues against your position. {{ed:oped}}",
+      "tag": "oped_display",
+      "multiple": false,
+      "required": false,
+      "choices": [],
+      "rows": [],
+      "sourceQuestionId": ""
+     }
+    ]
+   },
+   {
+    "id": "b_arg",
+    "title": "Arguing chatbot",
+    "questions": [
+     {
+      "id": "q_arg",
+      "type": "DB",
+      "text": "Please chat with the assistant for about 4 minutes. It will challenge your views on the article and argue the other side. {{ed:chat_arg}}",
+      "tag": "chat_arg",
+      "multiple": false,
+      "required": false,
+      "choices": [],
+      "rows": [],
+      "sourceQuestionId": ""
+     }
+    ]
+   },
+   {
+    "id": "b_neu",
+    "title": "Neutral chatbot",
+    "questions": [
+     {
+      "id": "q_neu",
+      "type": "DB",
+      "text": "Please chat with the assistant for about 4 minutes. It will ask you questions about your views on the article. {{ed:chat_neu}}",
+      "tag": "chat_neu",
+      "multiple": false,
+      "required": false,
+      "choices": [],
+      "rows": [],
+      "sourceQuestionId": ""
+     }
+    ]
+   },
+   {
+    "id": "b_sta",
+    "title": "Static task",
+    "questions": [
+     {
+      "id": "q_sta",
+      "type": "TE",
+      "text": "For about 4 minutes, list three similarities and three differences between the article and a typical news report on the same topic.",
+      "tag": "static_task",
+      "multiple": false,
+      "required": true,
+      "choices": [],
+      "rows": [],
+      "sourceQuestionId": ""
+     }
+    ]
+   },
+   {
+    "id": "b_out",
+    "title": "Immediate outcomes",
+    "questions": [
+     {
+      "id": "q_att",
+      "type": "MC",
+      "text": "How much do you support increased government spending? (1 = strongly oppose, 7 = strongly support)",
+      "tag": "toward_counterarg_t1",
+      "multiple": false,
+      "required": true,
+      "choices": [
+       {
+        "id": "a1",
+        "text": "1",
+        "recode": "1"
+       },
+       {
+        "id": "a2",
+        "text": "2",
+        "recode": "2"
+       },
+       {
+        "id": "a3",
+        "text": "3",
+        "recode": "3"
+       },
+       {
+        "id": "a4",
+        "text": "4",
+        "recode": "4"
+       },
+       {
+        "id": "a5",
+        "text": "5",
+        "recode": "5"
+       },
+       {
+        "id": "a6",
+        "text": "6",
+        "recode": "6"
+       },
+       {
+        "id": "a7",
+        "text": "7",
+        "recode": "7"
+       }
+      ],
+      "rows": [],
+      "sourceQuestionId": "toward_counterarg"
+     },
+     {
+      "id": "q_cert",
+      "type": "TE",
+      "text": "How certain are you of your position, from 0 to 100?",
+      "tag": "certainty_t1",
+      "multiple": false,
+      "required": true,
+      "choices": [],
+      "rows": [],
+      "sourceQuestionId": "certainty"
+     }
+    ]
+   },
+   {
+    "id": "b_debrief",
+    "title": "Debrief",
+    "questions": [
+     {
+      "id": "q_debrief",
+      "type": "DB",
+      "text": "Thank you. The article presented one side of a debate and the chatbot was an automated program. We will contact you in one week for a brief follow-up, in which we ask the same attitude questions again.",
+      "tag": "debrief",
+      "multiple": false,
+      "required": false,
+      "choices": [],
+      "rows": [],
+      "sourceQuestionId": ""
+     }
+    ]
+   },
+   {
+    "id": "b_fu",
+    "title": "One-week follow-up",
+    "questions": [
+     {
+      "id": "q_att2",
+      "type": "MC",
+      "text": "How much do you support increased government spending? (1 = strongly oppose, 7 = strongly support)",
+      "tag": "toward_counterarg_t2",
+      "multiple": false,
+      "required": true,
+      "choices": [
+       {
+        "id": "f1",
+        "text": "1",
+        "recode": "1"
+       },
+       {
+        "id": "f2",
+        "text": "2",
+        "recode": "2"
+       },
+       {
+        "id": "f3",
+        "text": "3",
+        "recode": "3"
+       },
+       {
+        "id": "f4",
+        "text": "4",
+        "recode": "4"
+       },
+       {
+        "id": "f5",
+        "text": "5",
+        "recode": "5"
+       },
+       {
+        "id": "f6",
+        "text": "6",
+        "recode": "6"
+       },
+       {
+        "id": "f7",
+        "text": "7",
+        "recode": "7"
+       }
+      ],
+      "rows": [],
+      "sourceQuestionId": "toward_counterarg"
+     },
+     {
+      "id": "q_cert2",
+      "type": "TE",
+      "text": "How certain are you of your position, from 0 to 100?",
+      "tag": "certainty_t2",
+      "multiple": false,
+      "required": true,
+      "choices": [],
+      "rows": [],
+      "sourceQuestionId": "certainty"
+     }
+    ]
+   }
+  ],
+  "flow": [
+   {
+    "id": "n_consent",
+    "type": "block",
+    "label": "Consent",
+    "children": [],
+    "blockId": "b_consent",
+    "field": "",
+    "value": "",
+    "questionId": "",
+    "choiceId": "",
+    "operator": "equals"
+   },
+   {
+    "id": "n_end",
+    "type": "end",
+    "label": "End non-consent",
+    "children": [],
+    "blockId": "",
+    "field": "",
+    "value": "",
+    "questionId": "",
+    "choiceId": "",
+    "operator": "equals"
+   },
+   {
+    "id": "n_branch",
+    "type": "branch",
+    "label": "Non-consent",
+    "children": [
+     "n_end"
+    ],
+    "blockId": "",
+    "field": "",
+    "value": "",
+    "questionId": "q_consent",
+    "choiceId": "no",
+    "operator": "selected"
+   },
+   {
+    "id": "set_oped",
+    "type": "embedded",
+    "label": "oped",
+    "children": [],
+    "blockId": "",
+    "field": "oped",
+    "value": "[IMAGE: the op-ed article text arguing against the participant's spending position]",
+    "questionId": "",
+    "choiceId": "",
+    "operator": "equals"
+   },
+   {
+    "id": "n_base",
+    "type": "block",
+    "label": "Baseline",
+    "children": [],
+    "blockId": "b_base",
+    "field": "",
+    "value": "",
+    "questionId": "",
+    "choiceId": "",
+    "operator": "equals"
+   },
+   {
+    "id": "r1",
+    "type": "randomizer",
+    "label": "Role",
+    "children": [
+     "arm_arg",
+     "arm_neu",
+     "arm_sta"
+    ],
+    "blockId": "",
+    "field": "",
+    "value": "",
+    "questionId": "",
+    "choiceId": "",
+    "operator": "equals"
+   },
+   {
+    "id": "arm_arg",
+    "type": "group",
+    "label": "Arguing",
+    "children": [
+     "set_arg",
+     "set_carg",
+     "t_arg"
+    ],
+    "blockId": "",
+    "field": "",
+    "value": "",
+    "questionId": "",
+    "choiceId": "",
+    "operator": "equals"
+   },
+   {
+    "id": "set_arg",
+    "type": "embedded",
+    "label": "cond",
+    "children": [],
+    "blockId": "",
+    "field": "condition",
+    "value": "arguing",
+    "questionId": "",
+    "choiceId": "",
+    "operator": "equals"
+   },
+   {
+    "id": "set_carg",
+    "type": "embedded",
+    "label": "chat_arg",
+    "children": [],
+    "blockId": "",
+    "field": "chat_arg",
+    "value": "[IMAGE: embedded chat window with an assistant that argues the op-ed's side]",
+    "questionId": "",
+    "choiceId": "",
+    "operator": "equals"
+   },
+   {
+    "id": "t_arg",
+    "type": "block",
+    "label": "Arg chat",
+    "children": [],
+    "blockId": "b_arg",
+    "field": "",
+    "value": "",
+    "questionId": "",
+    "choiceId": "",
+    "operator": "equals"
+   },
+   {
+    "id": "arm_neu",
+    "type": "group",
+    "label": "Neutral",
+    "children": [
+     "set_neu",
+     "set_cneu",
+     "t_neu"
+    ],
+    "blockId": "",
+    "field": "",
+    "value": "",
+    "questionId": "",
+    "choiceId": "",
+    "operator": "equals"
+   },
+   {
+    "id": "set_neu",
+    "type": "embedded",
+    "label": "cond",
+    "children": [],
+    "blockId": "",
+    "field": "condition",
+    "value": "neutral",
+    "questionId": "",
+    "choiceId": "",
+    "operator": "equals"
+   },
+   {
+    "id": "set_cneu",
+    "type": "embedded",
+    "label": "chat_neu",
+    "children": [],
+    "blockId": "",
+    "field": "chat_neu",
+    "value": "[IMAGE: embedded chat window with an assistant that asks only neutral questions]",
+    "questionId": "",
+    "choiceId": "",
+    "operator": "equals"
+   },
+   {
+    "id": "t_neu",
+    "type": "block",
+    "label": "Neutral chat",
+    "children": [],
+    "blockId": "b_neu",
+    "field": "",
+    "value": "",
+    "questionId": "",
+    "choiceId": "",
+    "operator": "equals"
+   },
+   {
+    "id": "arm_sta",
+    "type": "group",
+    "label": "Static",
+    "children": [
+     "set_sta",
+     "t_sta"
+    ],
+    "blockId": "",
+    "field": "",
+    "value": "",
+    "questionId": "",
+    "choiceId": "",
+    "operator": "equals"
+   },
+   {
+    "id": "set_sta",
+    "type": "embedded",
+    "label": "cond",
+    "children": [],
+    "blockId": "",
+    "field": "condition",
+    "value": "static",
+    "questionId": "",
+    "choiceId": "",
+    "operator": "equals"
+   },
+   {
+    "id": "t_sta",
+    "type": "block",
+    "label": "Static task",
+    "children": [],
+    "blockId": "b_sta",
+    "field": "",
+    "value": "",
+    "questionId": "",
+    "choiceId": "",
+    "operator": "equals"
+   },
+   {
+    "id": "n_out",
+    "type": "block",
+    "label": "Outcomes",
+    "children": [],
+    "blockId": "b_out",
+    "field": "",
+    "value": "",
+    "questionId": "",
+    "choiceId": "",
+    "operator": "equals"
+   },
+   {
+    "id": "n_deb",
+    "type": "block",
+    "label": "Debrief",
+    "children": [],
+    "blockId": "b_debrief",
+    "field": "",
+    "value": "",
+    "questionId": "",
+    "choiceId": "",
+    "operator": "equals"
+   },
+   {
+    "id": "n_fu",
+    "type": "block",
+    "label": "Follow-up",
+    "children": [],
+    "blockId": "b_fu",
+    "field": "",
+    "value": "",
+    "questionId": "",
+    "choiceId": "",
+    "operator": "equals"
+   }
+  ],
+  "roots": [
+   "n_consent",
+   "n_branch",
+   "set_oped",
+   "n_base",
+   "r1",
+   "n_out",
+   "n_deb",
+   "n_fu"
+  ],
+  "assumptions": [
+   "About 400 per arm (1,200 total, plus roughly 25-30% attrition inflation at follow-up) gives 80% power to detect 0.28 points; with SD 1.49 from H1 the MDE is about 0.29. The chatbot increment is expected to be at most about half the observed 0.64.",
+   "Platform is an online US panel. The chatbot is an LLM with fixed prompts per arm. Compensation is set by the panel.",
+   "Pre-register the contrasts: arguing vs static, arguing vs neutral, neutral vs static, at both times, with Holm correction.",
+   "Op-ed text is reused from the source study. Position is measured at baseline and the outcome is recoded toward the op-ed.",
+   "The follow-up is sent 7 days after the main survey; the intended sequence is debrief first, then follow-up."
+  ],
+  "unresolved": [
+   "The op-ed text, the chatbot prompts and the hosting of the chat widget must be supplied by the research team.",
+   "IRB approval number and compensation levels need to be supplied.",
+   "The follow-up link delivery and panel re-contact mechanism need to be arranged."
+  ],
+  "evidence": [
+   {
+    "id": "e1",
+    "title": "Source study",
+    "url": "https://github.com/yrvelez/dialogue-through-disagreement",
+    "claim": "Source study had a chatbot in both arms, so the chatbot's marginal contribution is unidentified.",
+    "excerpt": "",
+    "origin": "supplied"
+   },
+   {
+    "id": "e2",
+    "title": "AI-based chatbots in customer service and their effects on user compliance",
+    "url": "https://doi.org/10.1007/s12525-020-00414-7",
+    "claim": "Chatbot interaction can affect user compliance.",
+    "excerpt": "",
+    "origin": "supplied"
+   }
+  ]
+ }
+}
