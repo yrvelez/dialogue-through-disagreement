@@ -6,8 +6,8 @@
   "Yamil R. Velez",
   "Patrick Liu"
  ],
- "summary": "Can a chatbot conversation serve as a measurement device for persuasion, and does an op-ed against a reader's own position change attitudes? We analyse an online survey experiment with US panelists (449 recruited, 446 analysed). Participants read either an op-ed arguing against their own position or an unrelated placebo article, and then talked with a chatbot. The op-ed group moved 0.64 scale points toward the op-ed position (95% CI [0.37, 0.91], p < 0.001) and reported certainty 5.3 points lower (95% CI [−8.9, −1.7], p = 0.004). Their chatbot conversations also used op-ed keywords more often: 16.6 percentage points more for counterargument keywords and 26.7 percentage points more for supportive keywords (both p < 0.001). The effect was clear among pro-spending participants but inconclusiv",
- "created": "2026-10-07",
+ "summary": "Can a chatbot conversation serve as a measurement device for persuasion, and does an op-ed arguing against a person's own view shift their attitudes? We ran a survey experiment on US adults from a CloudResearch online panel. Participants read either an op-ed against their own position or an unrelated placebo article, and then talked with a chatbot. Of 449 respondents, 446 were analysed. Compared with placebo, the op-ed arm moved support toward the op-ed position by 0.64 points (95% CI [0.37, 0.91], p < 0.001) and lowered certainty by 5.3 points (95% CI [−8.9, −1.7], p = 0.004). It also raised the use of counterargument keywords (+0.166) and supportive keywords (+0.267) in the conversation (both p < 0.001). The plan was reconstructed after the fact and was not pre-registered, so every test ",
+ "created": "2026-10-08",
  "synthetic": false,
  "design": {
   "type": "survey_experiment",
@@ -33,7 +33,8 @@
  },
  "population": {
   "country": "US",
-  "sample": "online_panel"
+  "sample": "online_panel",
+  "description": "US adults, CloudResearch online panel"
  },
  "constructs": [
   "persuasion",
@@ -97,6 +98,26 @@
    "p": 2.4054877692672884e-13,
    "n": 446,
    "supported": true
+  },
+  {
+   "id": "E1",
+   "text": "H1 robustness to restricting to the pro-spending group",
+   "tag": "exploratory",
+   "estimate": null,
+   "se": null,
+   "p": null,
+   "n": null,
+   "supported": null
+  },
+  {
+   "id": "E2",
+   "text": "Heterogeneity of the H3 counterargument keyword effect by group",
+   "tag": "exploratory",
+   "estimate": null,
+   "se": null,
+   "p": null,
+   "n": null,
+   "supported": null
   }
  ],
  "release_status": "draft",
@@ -110,17 +131,17 @@
   "reviewer_pass": true,
   "models": {
    "strong": "anthropic/claude-sonnet-5.5",
-   "fast": "qwen/qwen3.8-27b"
+   "fast": "anthropic/claude-haiku-5.5"
   },
   "provider": "openrouter",
   "zero_retention_requested": true,
-  "cost_usd": 0.57732,
+  "cost_usd": 0.36853,
   "tokens": {
-   "in": 206119,
-   "out": 47988
+   "in": 99125,
+   "out": 25453
   },
   "tool_version": "0.1.0",
-  "created": "2026-10-07T03:00:13Z",
+  "created": "2026-10-08T16:01:14Z",
   "pap_source": "author-supplied pap.json",
   "pii": {
    "dropped": [],
@@ -130,103 +151,102 @@
    "scan": "header + first data row only, local regex"
   },
   "degraded": [
-   "no QSF: codebook inferred from CSV header rows; arms must come from the PAP",
-   "exploratory agent produced no analyses; its draft script/tables were removed: scripts/04_exploratory.py, results/E1_heterogeneity_group.csv, results/E2_robustness_imputation.csv, results/E3_dose_keyword_recall.csv"
+   "no QSF: codebook inferred from CSV header rows; arms must come from the PAP"
   ],
   "inputs": {
    "raw_csv_sha256": "8e03d0a7ac154a8a82e3775102abf3010b41e44df22923d6a25133570f07176d",
    "pap_sha256": "5ab6a4e3f2b786684a244dd494972aca7253a12e40b099af01dabcf3036208b9",
    "qsf_sha256": null,
-   "pap_json_sha256": "4e349b3e12a3fa82f416d2c6851c5fcc79abf64147b36607e575f2d3bcfc0d82"
+   "pap_json_sha256": "8ba583c5290cfb89a8070079d00f3d230d943f94efd7c2a612e5a723dfeca679"
   },
   "review_mode": "light",
   "review_rounds": [
    {
     "round": 1,
-    "decision": "major_revision",
-    "k_issues": 4,
+    "decision": "accept",
+    "k_issues": 2,
     "revised": true,
     "agent_addenda": []
    }
   ],
   "usage_by_agent": {
    "exploratory": {
-    "calls": 10,
-    "in": 104046,
-    "out": 14283,
-    "cost": 0.063666067212,
+    "calls": 3,
+    "in": 16624,
+    "out": 3639,
+    "cost": 0.0034470810000000003,
     "models": [
-     "qwen/qwen3.8-27b"
+     "anthropic/claude-haiku-5.5"
     ]
    },
    "litreview": {
     "calls": 2,
-    "in": 1912,
-    "out": 2755,
-    "cost": 0.00893013462,
+    "in": 2914,
+    "out": 930,
+    "cost": 0.000748836,
     "models": [
-     "qwen/qwen3.8-27b"
+     "anthropic/claude-haiku-5.5"
     ]
    },
    "writer": {
     "calls": 1,
-    "in": 3515,
-    "out": 1603,
-    "cost": 0.0228294,
+    "in": 3699,
+    "out": 1769,
+    "cost": 0.02483712,
     "models": [
      "anthropic/claude-sonnet-5.5"
     ]
    },
    "reviewer": {
     "calls": 1,
-    "in": 8774,
-    "out": 750,
-    "cost": 0.02479752,
+    "in": 9799,
+    "out": 551,
+    "cost": 0.02485692,
     "models": [
      "anthropic/claude-sonnet-5.5"
     ]
    },
    "review_orchestrator": {
     "calls": 1,
-    "in": 9590,
-    "out": 1636,
-    "cost": 0.0351846,
+    "in": 10273,
+    "out": 1300,
+    "cost": 0.03321054,
     "models": [
      "anthropic/claude-sonnet-5.5"
     ]
    },
    "writer_revise": {
-    "calls": 2,
-    "in": 13237,
-    "out": 4015,
-    "cost": 0.06595776,
+    "calls": 1,
+    "in": 6709,
+    "out": 2081,
+    "cost": 0.03388572,
     "models": [
      "anthropic/claude-sonnet-5.5"
     ]
    },
    "review_signoff": {
-    "calls": 2,
-    "in": 19178,
-    "out": 2636,
-    "cost": 0.06406884,
+    "calls": 1,
+    "in": 10163,
+    "out": 1258,
+    "cost": 0.03257694,
     "models": [
      "anthropic/claude-sonnet-5.5"
     ]
    },
    "potential": {
     "calls": 1,
-    "in": 11517,
-    "out": 2550,
-    "cost": 0.04804866,
+    "in": 12417,
+    "out": 2059,
+    "cost": 0.04496976,
     "models": [
      "anthropic/claude-sonnet-5.5"
     ]
    },
    "extensions": {
-    "calls": 4,
-    "in": 34350,
-    "out": 17760,
-    "cost": 0.24383700000000003,
+    "calls": 3,
+    "in": 26527,
+    "out": 11866,
+    "cost": 0.16999686,
     "models": [
      "anthropic/claude-sonnet-5.5"
     ]
@@ -234,59 +254,56 @@
   },
   "stage_seconds": {
    "ingest": 0.0,
-   "pii": 0.0,
+   "pii": 0.01,
    "tidy": 0.01,
    "pap": 0.0,
-   "clean": 0.32,
-   "registered": 12.11,
+   "clean": 0.28,
+   "registered": 11.33,
    "tag": 0.0,
-   "exploratory": 396.56,
-   "litreview": 23.11,
-   "write": 11.97,
-   "review": 15.95,
+   "exploratory": 20.46,
+   "litreview": 12.31,
+   "write": 12.96,
+   "review": 13.81,
    "robustness": 0.0,
-   "revise": 36.0,
-   "extensions": 115.01,
+   "revise": 18.14,
+   "extensions": 80.33,
    "package": 0.0
   },
-  "total_seconds": 611.0,
+  "total_seconds": 169.6,
   "log": [
-   "2026-10-07T03:00:13Z stage ingest",
-   "2026-10-07T03:00:13Z stage pii",
-   "2026-10-07T03:00:13Z PII scan: no identifier or free-text columns flagged.",
-   "2026-10-07T03:00:13Z stage tidy",
-   "2026-10-07T03:00:13Z stage pap",
-   "2026-10-07T03:00:13Z pap: loaded author-supplied pap_two_sided.json (papreader agent skipped)",
-   "2026-10-07T03:00:13Z stage clean",
-   "2026-10-07T03:00:13Z wrote data/clean.csv: 446 rows, 10 columns",
-   "2026-10-07T03:00:13Z stage registered",
-   "2026-10-07T03:00:25Z H1: dropped 7 of 446 eligible rows with a missing outcome, covariate, weight or cluster value",
-   "2026-10-07T03:00:25Z H1: toward_counterarg ~ treat | ATE=0.638 (SE 0.139, p=0.0000, N=439)",
-   "2026-10-07T03:00:25Z H2: dropped 7 of 446 eligible rows with a missing outcome, covariate, weight or cluster value",
-   "2026-10-07T03:00:25Z H2: certainty ~ treat | ATE=-5.311 (SE 1.825, p=0.0036, N=439)",
-   "2026-10-07T03:00:25Z H3: counterarg_keyword ~ treat | ATE=0.166 (SE 0.035, p=0.0000, N=446)",
-   "2026-10-07T03:00:25Z H4: supportive_keyword ~ treat | ATE=0.267 (SE 0.036, p=0.0000, N=446)",
-   "2026-10-07T03:00:25Z S1: interaction treatment x Pro-spending (vs Anti-spending) = 0.425 (SE 0.476, p=0.3724)",
-   "2026-10-07T03:00:25Z wrote results/registered_summary.csv (5 rows)",
-   "2026-10-07T03:00:25Z stage tag",
-   "2026-10-07T03:00:25Z stage exploratory",
-   "2026-10-07T03:07:02Z exploratory: no analyses recorded; removed scripts/04_exploratory.py, results/E1_heterogeneity_group.csv, results/E2_robustness_imputation.csv, results/E3_dose_keyword_recall.csv",
-   "2026-10-07T03:07:02Z tags: H1=unregistered, H2=unregistered, H3=unregistered, H4=unregistered, S1=unregistered",
-   "2026-10-07T03:07:02Z stage litreview",
-   "2026-10-07T03:07:25Z stage write",
-   "2026-10-07T03:07:25Z diagram: template (figures/design.svg)",
-   "2026-10-07T03:07:37Z stage review",
-   "2026-10-07T03:07:53Z review (light): 8 issue(s); provisional decision: major_revision",
-   "2026-10-07T03:07:53Z stage robustness",
-   "2026-10-07T03:07:53Z stage revise",
-   "2026-10-07T03:08:05Z correction pass 1: 11 note(s) from the writing agent",
-   "2026-10-07T03:08:12Z claim re-check: 9/10 claims supported on the corrected text",
-   "2026-10-07T03:08:22Z correction pass 2: 1 note(s) from the writing agent",
-   "2026-10-07T03:08:29Z claim re-check: 9/10 claims supported on the corrected text",
-   "2026-10-07T03:08:29Z stage extensions",
-   "2026-10-07T03:08:48Z research potential: 5 cause(s), 1 debate(s), 3 brief(s)",
-   "2026-10-07T03:10:24Z extensions: 3 proposal(s) validated by autoexperiment",
-   "2026-10-07T03:10:24Z stage package"
+   "2026-10-08T16:01:14Z stage ingest",
+   "2026-10-08T16:01:14Z stage pii",
+   "2026-10-08T16:01:14Z PII scan: no identifier or free-text columns flagged.",
+   "2026-10-08T16:01:14Z stage tidy",
+   "2026-10-08T16:01:14Z stage pap",
+   "2026-10-08T16:01:14Z pap: loaded author-supplied pap_two_sided.json (papreader agent skipped)",
+   "2026-10-08T16:01:14Z stage clean",
+   "2026-10-08T16:01:14Z wrote data/clean.csv: 446 rows, 10 columns",
+   "2026-10-08T16:01:14Z stage registered",
+   "2026-10-08T16:01:26Z H1: dropped 7 of 446 eligible rows with a missing outcome, covariate, weight or cluster value",
+   "2026-10-08T16:01:26Z H1: toward_counterarg ~ treat | ATE=0.638 (SE 0.139, p=0.0000, N=439)",
+   "2026-10-08T16:01:26Z H2: dropped 7 of 446 eligible rows with a missing outcome, covariate, weight or cluster value",
+   "2026-10-08T16:01:26Z H2: certainty ~ treat | ATE=-5.311 (SE 1.825, p=0.0036, N=439)",
+   "2026-10-08T16:01:26Z H3: counterarg_keyword ~ treat | ATE=0.166 (SE 0.035, p=0.0000, N=446)",
+   "2026-10-08T16:01:26Z H4: supportive_keyword ~ treat | ATE=0.267 (SE 0.036, p=0.0000, N=446)",
+   "2026-10-08T16:01:26Z S1: interaction treatment x Pro-spending (vs Anti-spending) = 0.425 (SE 0.476, p=0.3724)",
+   "2026-10-08T16:01:26Z wrote results/registered_summary.csv (5 rows)",
+   "2026-10-08T16:01:26Z stage tag",
+   "2026-10-08T16:01:26Z stage exploratory",
+   "2026-10-08T16:01:46Z tags: H1=unregistered, H2=unregistered, H3=unregistered, H4=unregistered, S1=unregistered, E1=exploratory, E2=exploratory",
+   "2026-10-08T16:01:46Z stage litreview",
+   "2026-10-08T16:01:58Z stage write",
+   "2026-10-08T16:01:58Z diagram: template (figures/design.svg)",
+   "2026-10-08T16:02:11Z stage review",
+   "2026-10-08T16:02:25Z review (light): 5 issue(s); provisional decision: minor_revision",
+   "2026-10-08T16:02:25Z stage robustness",
+   "2026-10-08T16:02:25Z stage revise",
+   "2026-10-08T16:02:36Z correction pass 1: 8 note(s) from the writing agent",
+   "2026-10-08T16:02:43Z claim re-check: 10/10 claims supported on the corrected text",
+   "2026-10-08T16:02:43Z stage extensions",
+   "2026-10-08T16:02:59Z research potential: 4 cause(s), 0 debate(s), 2 brief(s)",
+   "2026-10-08T16:04:04Z extensions: 2 proposal(s) validated by autoexperiment",
+   "2026-10-08T16:04:04Z stage package"
   ]
  },
  "doi": null,
@@ -306,16 +323,16 @@
    "label": "Design advance",
    "brief_id": "advance_design",
    "mode": "survey_experiment",
-   "debate": "D1",
-   "why": "Addresses design and measurement: a no-chatbot arm identifies the chatbot's contribution, a pre-chat attitude measure ties keywords to belief change, and a wave 2 tests durability.",
-   "title": "Validating conversation keywords against attitudes, with a no-chat arm and delayed follow-up",
-   "hypothesis": "If conversation adds persuasion beyond the text, the op-ed+chat arm will shift attitudes more than the op-ed-only arm, and the difference will persist at 2 weeks. If it does not, the arms will not differ, or the chat-driven difference will fade. Within the op-ed+chat arm, argument-adoption coding should predict attitude shift better than keyword counts.",
-   "primary_outcome": "Immediate change in support toward the op-ed position (post minus pre), with the 2-week change as the durability outcome.",
+   "debate": null,
+   "why": "Fixes the design and measurement causes: it adds the missing no-chatbot comparison and a pre-exposure baseline, and tests keyword use against attitude change.",
+   "title": "Chatbot conversation versus a standard attitude scale as a persuasion measure",
+   "hypothesis": "The op-ed shifts support toward the op-ed position within each chat condition. The chatbot adds no detectable shift beyond the scale. Counterargument content in chats tracks, but does not replace, the scale change.",
+   "primary_outcome": "Change in support toward the op-ed position (post minus baseline, 1-7 recoded).",
    "conditions": [
     "Op-ed + chatbot",
-    "Op-ed only",
+    "Op-ed + filler",
     "Placebo + chatbot",
-    "Placebo only"
+    "Placebo + filler"
    ],
    "status": "proposed",
    "built_at": null,
@@ -331,10 +348,10 @@
    "brief_id": "generalizability_conditional",
    "mode": "survey_experiment",
    "debate": null,
-   "why": "Addresses sample and power: the anti-spending group (n=59) could not test moderation (interaction p=0.37).",
-   "title": "Oversampling the anti-spending position and varying topic",
-   "hypothesis": "The op-ed moves attitudes toward the op-ed position relative to placebo in both position groups and on both topics. The treatment by position and treatment by topic interactions are small relative to the main effect.",
-   "primary_outcome": "Support moved toward the op-ed position (1-7 recoded), as in the source study.",
+   "why": "Fixes the sample cause: the anti-spending group (n = 59) was too small to estimate its effect or the group difference.",
+   "title": "Does the op-ed effect hold for respondents who oppose spending?",
+   "hypothesis": "The op-ed raises support toward the op-ed position in both groups. The effect for anti-spending respondents is smaller than for pro-spending respondents (positive pro-by-treatment interaction).",
+   "primary_outcome": "Support moved toward the op-ed position (1-7, recoded so higher = closer to the op-ed position).",
    "conditions": [
     "Op-ed + chatbot",
     "Placebo + chatbot"
@@ -345,67 +362,35 @@
    "svg": "extensions/generalizability_conditional.svg",
    "text": "extensions/generalizability_conditional.txt",
    "addresses": []
-  },
-  {
-   "id": "theoretical_debate",
-   "kind": "alternative",
-   "label": "Theoretical debate",
-   "brief_id": "theoretical_debate",
-   "mode": "survey_experiment",
-   "debate": "D1",
-   "why": "Addresses design and framing by discriminating between the 'adds value' and 'superficial engagement' positions of D1.",
-   "title": "Chatbot as persuader versus passive measurement",
-   "hypothesis": "If conversation adds persuasive value (position a), the arguing chatbot arm shows more shift toward the op-ed than both other arms. If engagement is superficial (position b), the arms do not differ and any shift decays by 1 week.",
-   "primary_outcome": "Support moved toward the op-ed position (1-7, recoded so higher means closer to the op-ed), immediate and at 1 week.",
-   "conditions": [
-    "Arguing chatbot",
-    "Neutral chatbot",
-    "Static task"
-   ],
-   "status": "proposed",
-   "built_at": null,
-   "qsf": "extensions/theoretical_debate.qsf",
-   "svg": "extensions/theoretical_debate.svg",
-   "text": "extensions/theoretical_debate.txt",
-   "addresses": []
   }
  ],
  "potential": {
-  "verdict": "A follow-up is worth running. The op-ed effect is solid (H1 1.6x MDE), but the study cannot answer its titular question about the chatbot, because every arm had one. Run advance_design first: it adds no-chat arms, validates the keyword measure against pre/post attitudes and adds a delayed wave, which resolves the main design and measurement gaps. The literature offers only a thin debate, with mostly off-topic retrieved works, so ground the theory in persuasion and LLM-dialogue papers before preregistering.",
+  "verdict": "A follow-up is worth running, mainly for the attitude result, which is well above its MDE (0.64 vs 0.40) and robust to the pro-spending restriction. The certainty drop is marginal (ratio 1.03), and the claim that the chatbot is a measurement device is untested because both arms chat and attitudes are measured only once. Run the chatbot-versus-standard-scale experiment first: it adds the missing no-chatbot arm and a pre-exposure baseline, and replaces keyword counts with validated coding. The balanced anti-spending sample comes second. The literature retrieved does not bear on the question, so no theoretical debate can be identified from it.",
   "causes": [
+   "power",
    "design",
    "measurement",
-   "power",
-   "framing",
-   "sample"
+   "framing"
   ],
-  "debates": [
-   "Does the chatbot add persuasion beyond the text?"
-  ],
+  "debates": [],
   "briefs": [
    {
     "id": "advance_design",
     "mode": "survey_experiment",
-    "title": "Validating conversation keywords against attitudes, with a no-chat arm and delayed follow-up",
-    "needs_qsf": true
-   },
-   {
-    "id": "theoretical_debate",
-    "mode": "survey_experiment",
-    "title": "Chatbot as persuader versus passive measurement",
+    "title": "Chatbot conversation versus a standard attitude scale as a persuasion measure",
     "needs_qsf": true
    },
    {
     "id": "generalizability_conditional",
     "mode": "survey_experiment",
-    "title": "Oversampling the anti-spending position and varying topic",
+    "title": "Does the op-ed effect hold for respondents who oppose spending?",
     "needs_qsf": true
    }
   ]
  },
  "review": "review.json",
  "review_claims": {
-  "supported": 9,
+  "supported": 10,
   "total": 10,
   "open_analytical": 0,
   "on_revised_text": true
@@ -423,8 +408,8 @@
   {
    "name": "review",
    "label": "review",
-   "value": "light pass · 9/10 claims supported",
-   "color": "amber",
+   "value": "light pass · 10/10 claims supported",
+   "color": "green",
    "href": null
   },
   {
@@ -458,7 +443,7 @@
   {
    "name": "cost",
    "label": "model calls",
-   "value": "$0.58",
+   "value": "$0.37",
    "color": "slate",
    "href": null
   }

@@ -4,17 +4,17 @@
  "reviewer_pass": true,
  "models": {
   "strong": "anthropic/claude-sonnet-5.5",
-  "fast": "qwen/qwen3.8-27b"
+  "fast": "anthropic/claude-haiku-5.5"
  },
  "provider": "openrouter",
  "zero_retention_requested": true,
- "cost_usd": 0.57732,
+ "cost_usd": 0.36853,
  "tokens": {
-  "in": 206119,
-  "out": 47988
+  "in": 99125,
+  "out": 25453
  },
  "tool_version": "0.1.0",
- "created": "2026-10-07T03:00:13Z",
+ "created": "2026-10-08T16:01:14Z",
  "pap_source": "author-supplied pap.json",
  "pii": {
   "dropped": [],
@@ -24,103 +24,102 @@
   "scan": "header + first data row only, local regex"
  },
  "degraded": [
-  "no QSF: codebook inferred from CSV header rows; arms must come from the PAP",
-  "exploratory agent produced no analyses; its draft script/tables were removed: scripts/04_exploratory.py, results/E1_heterogeneity_group.csv, results/E2_robustness_imputation.csv, results/E3_dose_keyword_recall.csv"
+  "no QSF: codebook inferred from CSV header rows; arms must come from the PAP"
  ],
  "inputs": {
   "raw_csv_sha256": "8e03d0a7ac154a8a82e3775102abf3010b41e44df22923d6a25133570f07176d",
   "pap_sha256": "5ab6a4e3f2b786684a244dd494972aca7253a12e40b099af01dabcf3036208b9",
   "qsf_sha256": null,
-  "pap_json_sha256": "4e349b3e12a3fa82f416d2c6851c5fcc79abf64147b36607e575f2d3bcfc0d82"
+  "pap_json_sha256": "8ba583c5290cfb89a8070079d00f3d230d943f94efd7c2a612e5a723dfeca679"
  },
  "review_mode": "light",
  "review_rounds": [
   {
    "round": 1,
-   "decision": "major_revision",
-   "k_issues": 4,
+   "decision": "accept",
+   "k_issues": 2,
    "revised": true,
    "agent_addenda": []
   }
  ],
  "usage_by_agent": {
   "exploratory": {
-   "calls": 10,
-   "in": 104046,
-   "out": 14283,
-   "cost": 0.063666067212,
+   "calls": 3,
+   "in": 16624,
+   "out": 3639,
+   "cost": 0.0034470810000000003,
    "models": [
-    "qwen/qwen3.8-27b"
+    "anthropic/claude-haiku-5.5"
    ]
   },
   "litreview": {
    "calls": 2,
-   "in": 1912,
-   "out": 2755,
-   "cost": 0.00893013462,
+   "in": 2914,
+   "out": 930,
+   "cost": 0.000748836,
    "models": [
-    "qwen/qwen3.8-27b"
+    "anthropic/claude-haiku-5.5"
    ]
   },
   "writer": {
    "calls": 1,
-   "in": 3515,
-   "out": 1603,
-   "cost": 0.0228294,
+   "in": 3699,
+   "out": 1769,
+   "cost": 0.02483712,
    "models": [
     "anthropic/claude-sonnet-5.5"
    ]
   },
   "reviewer": {
    "calls": 1,
-   "in": 8774,
-   "out": 750,
-   "cost": 0.02479752,
+   "in": 9799,
+   "out": 551,
+   "cost": 0.02485692,
    "models": [
     "anthropic/claude-sonnet-5.5"
    ]
   },
   "review_orchestrator": {
    "calls": 1,
-   "in": 9590,
-   "out": 1636,
-   "cost": 0.0351846,
+   "in": 10273,
+   "out": 1300,
+   "cost": 0.03321054,
    "models": [
     "anthropic/claude-sonnet-5.5"
    ]
   },
   "writer_revise": {
-   "calls": 2,
-   "in": 13237,
-   "out": 4015,
-   "cost": 0.06595776,
+   "calls": 1,
+   "in": 6709,
+   "out": 2081,
+   "cost": 0.03388572,
    "models": [
     "anthropic/claude-sonnet-5.5"
    ]
   },
   "review_signoff": {
-   "calls": 2,
-   "in": 19178,
-   "out": 2636,
-   "cost": 0.06406884,
+   "calls": 1,
+   "in": 10163,
+   "out": 1258,
+   "cost": 0.03257694,
    "models": [
     "anthropic/claude-sonnet-5.5"
    ]
   },
   "potential": {
    "calls": 1,
-   "in": 11517,
-   "out": 2550,
-   "cost": 0.04804866,
+   "in": 12417,
+   "out": 2059,
+   "cost": 0.04496976,
    "models": [
     "anthropic/claude-sonnet-5.5"
    ]
   },
   "extensions": {
-   "calls": 4,
-   "in": 34350,
-   "out": 17760,
-   "cost": 0.24383700000000003,
+   "calls": 3,
+   "in": 26527,
+   "out": 11866,
+   "cost": 0.16999686,
    "models": [
     "anthropic/claude-sonnet-5.5"
    ]
@@ -128,58 +127,55 @@
  },
  "stage_seconds": {
   "ingest": 0.0,
-  "pii": 0.0,
+  "pii": 0.01,
   "tidy": 0.01,
   "pap": 0.0,
-  "clean": 0.32,
-  "registered": 12.11,
+  "clean": 0.28,
+  "registered": 11.33,
   "tag": 0.0,
-  "exploratory": 396.56,
-  "litreview": 23.11,
-  "write": 11.97,
-  "review": 15.95,
+  "exploratory": 20.46,
+  "litreview": 12.31,
+  "write": 12.96,
+  "review": 13.81,
   "robustness": 0.0,
-  "revise": 36.0,
-  "extensions": 115.01,
+  "revise": 18.14,
+  "extensions": 80.33,
   "package": 0.0
  },
- "total_seconds": 611.0,
+ "total_seconds": 169.6,
  "log": [
-  "2026-10-07T03:00:13Z stage ingest",
-  "2026-10-07T03:00:13Z stage pii",
-  "2026-10-07T03:00:13Z PII scan: no identifier or free-text columns flagged.",
-  "2026-10-07T03:00:13Z stage tidy",
-  "2026-10-07T03:00:13Z stage pap",
-  "2026-10-07T03:00:13Z pap: loaded author-supplied pap_two_sided.json (papreader agent skipped)",
-  "2026-10-07T03:00:13Z stage clean",
-  "2026-10-07T03:00:13Z wrote data/clean.csv: 446 rows, 10 columns",
-  "2026-10-07T03:00:13Z stage registered",
-  "2026-10-07T03:00:25Z H1: dropped 7 of 446 eligible rows with a missing outcome, covariate, weight or cluster value",
-  "2026-10-07T03:00:25Z H1: toward_counterarg ~ treat | ATE=0.638 (SE 0.139, p=0.0000, N=439)",
-  "2026-10-07T03:00:25Z H2: dropped 7 of 446 eligible rows with a missing outcome, covariate, weight or cluster value",
-  "2026-10-07T03:00:25Z H2: certainty ~ treat | ATE=-5.311 (SE 1.825, p=0.0036, N=439)",
-  "2026-10-07T03:00:25Z H3: counterarg_keyword ~ treat | ATE=0.166 (SE 0.035, p=0.0000, N=446)",
-  "2026-10-07T03:00:25Z H4: supportive_keyword ~ treat | ATE=0.267 (SE 0.036, p=0.0000, N=446)",
-  "2026-10-07T03:00:25Z S1: interaction treatment x Pro-spending (vs Anti-spending) = 0.425 (SE 0.476, p=0.3724)",
-  "2026-10-07T03:00:25Z wrote results/registered_summary.csv (5 rows)",
-  "2026-10-07T03:00:25Z stage tag",
-  "2026-10-07T03:00:25Z stage exploratory",
-  "2026-10-07T03:07:02Z exploratory: no analyses recorded; removed scripts/04_exploratory.py, results/E1_heterogeneity_group.csv, results/E2_robustness_imputation.csv, results/E3_dose_keyword_recall.csv",
-  "2026-10-07T03:07:02Z tags: H1=unregistered, H2=unregistered, H3=unregistered, H4=unregistered, S1=unregistered",
-  "2026-10-07T03:07:02Z stage litreview",
-  "2026-10-07T03:07:25Z stage write",
-  "2026-10-07T03:07:25Z diagram: template (figures/design.svg)",
-  "2026-10-07T03:07:37Z stage review",
-  "2026-10-07T03:07:53Z review (light): 8 issue(s); provisional decision: major_revision",
-  "2026-10-07T03:07:53Z stage robustness",
-  "2026-10-07T03:07:53Z stage revise",
-  "2026-10-07T03:08:05Z correction pass 1: 11 note(s) from the writing agent",
-  "2026-10-07T03:08:12Z claim re-check: 9/10 claims supported on the corrected text",
-  "2026-10-07T03:08:22Z correction pass 2: 1 note(s) from the writing agent",
-  "2026-10-07T03:08:29Z claim re-check: 9/10 claims supported on the corrected text",
-  "2026-10-07T03:08:29Z stage extensions",
-  "2026-10-07T03:08:48Z research potential: 5 cause(s), 1 debate(s), 3 brief(s)",
-  "2026-10-07T03:10:24Z extensions: 3 proposal(s) validated by autoexperiment",
-  "2026-10-07T03:10:24Z stage package"
+  "2026-10-08T16:01:14Z stage ingest",
+  "2026-10-08T16:01:14Z stage pii",
+  "2026-10-08T16:01:14Z PII scan: no identifier or free-text columns flagged.",
+  "2026-10-08T16:01:14Z stage tidy",
+  "2026-10-08T16:01:14Z stage pap",
+  "2026-10-08T16:01:14Z pap: loaded author-supplied pap_two_sided.json (papreader agent skipped)",
+  "2026-10-08T16:01:14Z stage clean",
+  "2026-10-08T16:01:14Z wrote data/clean.csv: 446 rows, 10 columns",
+  "2026-10-08T16:01:14Z stage registered",
+  "2026-10-08T16:01:26Z H1: dropped 7 of 446 eligible rows with a missing outcome, covariate, weight or cluster value",
+  "2026-10-08T16:01:26Z H1: toward_counterarg ~ treat | ATE=0.638 (SE 0.139, p=0.0000, N=439)",
+  "2026-10-08T16:01:26Z H2: dropped 7 of 446 eligible rows with a missing outcome, covariate, weight or cluster value",
+  "2026-10-08T16:01:26Z H2: certainty ~ treat | ATE=-5.311 (SE 1.825, p=0.0036, N=439)",
+  "2026-10-08T16:01:26Z H3: counterarg_keyword ~ treat | ATE=0.166 (SE 0.035, p=0.0000, N=446)",
+  "2026-10-08T16:01:26Z H4: supportive_keyword ~ treat | ATE=0.267 (SE 0.036, p=0.0000, N=446)",
+  "2026-10-08T16:01:26Z S1: interaction treatment x Pro-spending (vs Anti-spending) = 0.425 (SE 0.476, p=0.3724)",
+  "2026-10-08T16:01:26Z wrote results/registered_summary.csv (5 rows)",
+  "2026-10-08T16:01:26Z stage tag",
+  "2026-10-08T16:01:26Z stage exploratory",
+  "2026-10-08T16:01:46Z tags: H1=unregistered, H2=unregistered, H3=unregistered, H4=unregistered, S1=unregistered, E1=exploratory, E2=exploratory",
+  "2026-10-08T16:01:46Z stage litreview",
+  "2026-10-08T16:01:58Z stage write",
+  "2026-10-08T16:01:58Z diagram: template (figures/design.svg)",
+  "2026-10-08T16:02:11Z stage review",
+  "2026-10-08T16:02:25Z review (light): 5 issue(s); provisional decision: minor_revision",
+  "2026-10-08T16:02:25Z stage robustness",
+  "2026-10-08T16:02:25Z stage revise",
+  "2026-10-08T16:02:36Z correction pass 1: 8 note(s) from the writing agent",
+  "2026-10-08T16:02:43Z claim re-check: 10/10 claims supported on the corrected text",
+  "2026-10-08T16:02:43Z stage extensions",
+  "2026-10-08T16:02:59Z research potential: 4 cause(s), 0 debate(s), 2 brief(s)",
+  "2026-10-08T16:04:04Z extensions: 2 proposal(s) validated by autoexperiment",
+  "2026-10-08T16:04:04Z stage package"
  ]
 }

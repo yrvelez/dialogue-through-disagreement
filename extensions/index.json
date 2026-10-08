@@ -5,37 +5,37 @@
   "media": [],
   "id": "advance_design",
   "kind": "mechanism",
-  "title": "Validating conversation keywords against attitudes, with a no-chat arm and delayed follow-up",
+  "title": "Chatbot conversation versus a standard attitude scale as a persuasion measure",
   "brief_id": "advance_design",
   "mode": "survey_experiment",
-  "debate": "D1",
-  "why": "Addresses design and measurement: a no-chatbot arm identifies the chatbot's contribution, a pre-chat attitude measure ties keywords to belief change, and a wave 2 tests durability.",
+  "debate": null,
+  "why": "Fixes the design and measurement causes: it adds the missing no-chatbot comparison and a pre-exposure baseline, and tests keyword use against attitude change.",
   "power_target": {
    "n_per_arm": 215,
    "mde": 0.4,
-   "basis": "H1 MDE 0.3985 at 224/215 per arm; observed 0.638. Because the chat increment is likely smaller than the full effect, consider about 400 per arm."
+   "basis": "H1 MDE of 0.3985 (n = 224/215) against the observed 0.638; powered for the main op-ed effect within each chat condition, with a wider margin than needed for the interaction."
   },
-  "rationale": "In the source study both arms chatted, so the 0.64-point shift (95% CI [0.37, 0.91]) cannot be split between the op-ed and the chatbot. Keyword gaps of 16.6 and 26.7 percentage points may reflect echoing of the op-ed rather than changed belief, and attitudes were measured only once, right after exposure.",
-  "contribution": "Identifies the chatbot's added effect beyond the op-ed text, checks whether keyword use tracks real attitude change, and tests whether the effect lasts.",
+  "rationale": "The source placebo arm also chatted with the chatbot, so the 0.64-point shift in support (95% CI [0.37, 0.91]) compares op-ed with placebo, not chatbot with no chatbot. Keyword differences (+0.166 counterargument, +0.267 supportive) may reflect article content echoed back rather than attitude change. A pre-exposure baseline, a no-chat arm and a delayed follow-up separate these.",
+  "contribution": "Tests whether a chatbot conversation detects or adds to attitude change measured by a standard scale, using a no-chat comparison and a baseline.",
   "addresses": [],
   "validated_by": "autoexperiment",
   "status": "proposed",
   "built_at": null,
   "survey_id": null,
   "survey_url": null,
-  "hypothesis": "If conversation adds persuasion beyond the text, the op-ed+chat arm will shift attitudes more than the op-ed-only arm, and the difference will persist at 2 weeks. If it does not, the arms will not differ, or the chat-driven difference will fade. Within the op-ed+chat arm, argument-adoption coding should predict attitude shift better than keyword counts.",
-  "primary_outcome": "Immediate change in support toward the op-ed position (post minus pre), with the 2-week change as the durability outcome.",
-  "comparison": "Op-ed+chatbot versus op-ed only (chatbot increment); op-ed versus placebo (text effect); wave 2 versus wave 1 change; keyword and adoption measures as predictors of shift within the op-ed+chat arm.",
+  "hypothesis": "The op-ed shifts support toward the op-ed position within each chat condition. The chatbot adds no detectable shift beyond the scale. Counterargument content in chats tracks, but does not replace, the scale change.",
+  "primary_outcome": "Change in support toward the op-ed position (post minus baseline, 1-7 recoded).",
+  "comparison": "Op-ed versus placebo within chat and no-chat arms; op-ed x chat interaction; classifier-coded chat content as a predictor of scale change.",
   "conditions": [
    "Op-ed + chatbot",
-   "Op-ed only",
+   "Op-ed + filler",
    "Placebo + chatbot",
-   "Placebo only"
+   "Placebo + filler"
   ],
   "unresolved": [
-   "Op-ed and placebo article texts, chatbot configuration and keyword dictionary must be supplied by the research team.",
-   "IRB approval number and compensation, including the wave 2 bonus, must be supplied.",
-   "Wave 2 is fielded as a separate session; the flow here lists it in sequence."
+   "Actual op-ed and placebo texts, chatbot configuration, classifier and validation sample must be supplied by the research team",
+   "Follow-up wave survey instrument and recontact logistics",
+   "IRB number and compensation"
   ],
   "label": "Design advance",
   "text": "extensions/advance_design.txt",
@@ -44,86 +44,43 @@
  {
   "qsf": "extensions/generalizability_conditional.qsf",
   "qsf_errors": [],
-  "media": [],
+  "media": [
+   "article: image stimulus to supply (Text of an op-ed arguing against the respondent's own position on infrastructure)",
+   "article: image stimulus to supply (Text of an unrelated placebo article)"
+  ],
   "id": "generalizability_conditional",
   "kind": "boundary",
-  "title": "Oversampling the anti-spending position and varying topic",
+  "title": "Does the op-ed effect hold for respondents who oppose spending?",
   "brief_id": "generalizability_conditional",
   "mode": "survey_experiment",
   "debate": null,
-  "why": "Addresses sample and power: the anti-spending group (n=59) could not test moderation (interaction p=0.37).",
+  "why": "Fixes the sample cause: the anti-spending group (n = 59) was too small to estimate its effect or the group difference.",
   "power_target": {
-   "n_per_arm": 250,
-   "mde": 0.35,
-   "basis": "Anti-spending effect of 0.23 (SE 0.454 at n=59); detecting 0.23 needs about 650 per cell at SD 1.49, so 250 per arm detects only about 0.35 within a subgroup. Size to the interaction as the target."
+   "n_per_arm": 300,
+   "mde": 0.32,
+   "basis": "Anti-spending effect observed 0.232 (SE 0.454, n = 59), so even the pro-spending 0.657 is the reference. About 300 per cell gives 80% power for 0.32 at the H1 SD of 1.49; detecting the interaction of 0.425 needs more."
   },
-  "rationale": "The source op-ed effect was 0.64 points overall, but only 59 participants were anti-spending (effect 0.232, SE 0.454), and the position interaction was 0.425 (p=0.37), so moderation is untested. Only one topic (spending) was used, so topic generality is unknown.",
-  "contribution": "Tests whether the op-ed plus chatbot effect holds for anti-spending respondents and on a second, unrelated policy topic, using adequately powered interaction tests.",
+  "rationale": "The source op-ed effect on support was 0.638 overall, but the pro-spending effect was 0.657 (n = 380) while the anti-spending effect was 0.232 (SE 0.454, n = 59). The treatment-by-group interaction of 0.425 (SE 0.476, p = 0.372) is inconclusive because the anti group was so small. A balanced sample can estimate both effects and their difference.",
+  "contribution": "Estimates the op-ed effect separately for anti- and pro-spending respondents in a sample balanced by design, and tests the interaction directly.",
   "addresses": [],
   "validated_by": "autoexperiment",
   "status": "proposed",
   "built_at": null,
   "survey_id": null,
   "survey_url": null,
-  "hypothesis": "The op-ed moves attitudes toward the op-ed position relative to placebo in both position groups and on both topics. The treatment by position and treatment by topic interactions are small relative to the main effect.",
-  "primary_outcome": "Support moved toward the op-ed position (1-7 recoded), as in the source study.",
-  "comparison": "Op-ed + chatbot versus placebo + chatbot, with interactions of treatment with prior position (pro vs anti) and with topic.",
+  "hypothesis": "The op-ed raises support toward the op-ed position in both groups. The effect for anti-spending respondents is smaller than for pro-spending respondents (positive pro-by-treatment interaction).",
+  "primary_outcome": "Support moved toward the op-ed position (1-7, recoded so higher = closer to the op-ed position).",
+  "comparison": "Op-ed + chatbot versus placebo + chatbot, within pro and anti groups, and the treatment-by-group interaction.",
   "conditions": [
    "Op-ed + chatbot",
    "Placebo + chatbot"
   ],
   "unresolved": [
-   "Choice of the second policy topic and the op-ed, placebo and chatbot texts for each topic and position must be written by the research team.",
-   "Topic assignment and quota logic must be implemented in the survey platform.",
-   "IRB approval and participant compensation must be supplied by the research team."
+   "The op-ed texts (against pro and against anti positions), placebo article and chatbot configuration must be supplied by the research team.",
+   "IRB approval number and compensation amount."
   ],
   "label": "Generalizability",
   "text": "extensions/generalizability_conditional.txt",
   "svg": "extensions/generalizability_conditional.svg"
- },
- {
-  "qsf": "extensions/theoretical_debate.qsf",
-  "qsf_errors": [],
-  "media": [
-   "oped: image stimulus to supply (the op-ed article text arguing against the participant's spending position)",
-   "chat_arg: image stimulus to supply (embedded chat window with an assistant that argues the op-ed's side)",
-   "chat_neu: image stimulus to supply (embedded chat window with an assistant that asks only neutral questions)"
-  ],
-  "id": "theoretical_debate",
-  "kind": "alternative",
-  "title": "Chatbot as persuader versus passive measurement",
-  "brief_id": "theoretical_debate",
-  "mode": "survey_experiment",
-  "debate": "D1",
-  "why": "Addresses design and framing by discriminating between the 'adds value' and 'superficial engagement' positions of D1.",
-  "power_target": {
-   "n_per_arm": 400,
-   "mde": 0.28,
-   "basis": "Chat increment is expected to be at most about half the observed 0.64; the SD of 1.49 from the H1 row gives MDE about 0.29 at 400 per arm."
-  },
-  "rationale": "The source study gave the chatbot to both arms, so the 0.64-point shift (SD about 1.49 in H1) cannot be attributed to the chatbot rather than the op-ed. Attitudes were also measured only right after exposure. This design randomises the chatbot's role after the same op-ed and adds a 1-week follow-up.",
-  "contribution": "Separates the chatbot's persuasive role from the op-ed's effect and tests whether any added shift lasts.",
-  "addresses": [],
-  "validated_by": "autoexperiment",
-  "status": "proposed",
-  "built_at": null,
-  "survey_id": null,
-  "survey_url": null,
-  "hypothesis": "If conversation adds persuasive value (position a), the arguing chatbot arm shows more shift toward the op-ed than both other arms. If engagement is superficial (position b), the arms do not differ and any shift decays by 1 week.",
-  "primary_outcome": "Support moved toward the op-ed position (1-7, recoded so higher means closer to the op-ed), immediate and at 1 week.",
-  "comparison": "Arguing chatbot vs neutral chatbot vs static task on immediate and 1-week shift; the arguing vs static contrast is the main one.",
-  "conditions": [
-   "Arguing chatbot",
-   "Neutral chatbot",
-   "Static task"
-  ],
-  "unresolved": [
-   "The op-ed text, the chatbot prompts and the hosting of the chat widget must be supplied by the research team.",
-   "IRB approval number and compensation levels need to be supplied.",
-   "The follow-up link delivery and panel re-contact mechanism need to be arranged."
-  ],
-  "label": "Theoretical debate",
-  "text": "extensions/theoretical_debate.txt",
-  "svg": "extensions/theoretical_debate.svg"
  }
 ]

@@ -1,7 +1,7 @@
 {
  "SurveyEntry": {
   "SurveyID": "SV_filedrawer00000",
-  "SurveyName": "Op-ed versus placebo across prior position and topic (extension of: Dialogue Through Disagreement? A",
+  "SurveyName": "Op-ed effect by prior position on infrastructure spending (extension of: Dialogue Through Disagreeme",
   "SurveyDescription": null,
   "SurveyOwnerID": "UR_filedrawer00000",
   "SurveyBrandID": "",
@@ -11,9 +11,9 @@
   "SurveyStatus": "Inactive",
   "SurveyStartDate": "0000-00-00 00:00:00",
   "SurveyExpirationDate": "0000-00-00 00:00:00",
-  "SurveyCreationDate": "2026-10-07 03:10:24",
+  "SurveyCreationDate": "2026-10-08 16:04:04",
   "CreatorID": "UR_filedrawer00000",
-  "LastModified": "2026-10-07 03:10:24",
+  "LastModified": "2026-10-08 16:04:04",
   "LastAccessed": "0000-00-00 00:00:00",
   "LastActivated": "0000-00-00 00:00:00",
   "Deleted": null
@@ -39,8 +39,8 @@
     },
     {
      "Type": "Standard",
-     "Description": "Prior position",
-     "ID": "BL_b_pre",
+     "Description": "Position",
+     "ID": "BL_b_group",
      "BlockElements": [
       {
        "Type": "Question",
@@ -136,7 +136,7 @@
      {
       "Type": "Branch",
       "FlowID": "FL_3",
-      "Description": "Non-consent",
+      "Description": "No consent",
       "BranchLogic": {
        "0": {
         "0": {
@@ -163,7 +163,7 @@
      },
      {
       "Type": "Standard",
-      "ID": "BL_b_pre",
+      "ID": "BL_b_group",
       "FlowID": "FL_5",
       "Autofill": []
      },
@@ -194,21 +194,36 @@
           ]
          },
          {
+          "Type": "EmbeddedData",
+          "FlowID": "FL_9",
+          "EmbeddedData": [
+           {
+            "Description": "article",
+            "Type": "Custom",
+            "Field": "article",
+            "VariableType": "String",
+            "DataVisibility": [],
+            "AnalyzeText": false,
+            "Value": "[IMAGE TO SUPPLY: Text of an op-ed arguing against the respondent's own position on infrastructure spending]"
+           }
+          ]
+         },
+         {
           "Type": "Standard",
           "ID": "BL_b_oped",
-          "FlowID": "FL_9",
+          "FlowID": "FL_10",
           "Autofill": []
          }
         ]
        },
        {
         "Type": "Group",
-        "FlowID": "FL_10",
+        "FlowID": "FL_11",
         "Description": "Placebo arm",
         "Flow": [
          {
           "Type": "EmbeddedData",
-          "FlowID": "FL_11",
+          "FlowID": "FL_12",
           "EmbeddedData": [
            {
             "Description": "condition",
@@ -222,9 +237,24 @@
           ]
          },
          {
+          "Type": "EmbeddedData",
+          "FlowID": "FL_13",
+          "EmbeddedData": [
+           {
+            "Description": "article",
+            "Type": "Custom",
+            "Field": "article",
+            "VariableType": "String",
+            "DataVisibility": [],
+            "AnalyzeText": false,
+            "Value": "[IMAGE TO SUPPLY: Text of an unrelated placebo article]"
+           }
+          ]
+         },
+         {
           "Type": "Standard",
           "ID": "BL_b_placebo",
-          "FlowID": "FL_12",
+          "FlowID": "FL_14",
           "Autofill": []
          }
         ]
@@ -234,24 +264,24 @@
      {
       "Type": "Standard",
       "ID": "BL_b_chat",
-      "FlowID": "FL_13",
+      "FlowID": "FL_15",
       "Autofill": []
      },
      {
       "Type": "Standard",
       "ID": "BL_b_out",
-      "FlowID": "FL_14",
+      "FlowID": "FL_16",
       "Autofill": []
      },
      {
       "Type": "Standard",
       "ID": "BL_b_debrief",
-      "FlowID": "FL_15",
+      "FlowID": "FL_17",
       "Autofill": []
      }
     ],
     "Properties": {
-     "Count": 15,
+     "Count": 17,
      "RemovedFieldsets": []
     }
    }
@@ -264,7 +294,7 @@
    "TertiaryAttribute": null,
    "Payload": {
     "PreviewType": "Brand",
-    "PreviewID": "02aa8fcd-2498-4c84-b33b-ea3f1721ea2f"
+    "PreviewID": "686c76a2-3f9c-42e1-a001-239479f119d0"
    }
   },
   {
@@ -332,7 +362,7 @@
     "ValidationMessage": null,
     "PreviousButton": "",
     "NextButton": "",
-    "SurveyTitle": "Op-ed versus placebo across prior position and topic (extension of: Dialogue Through Disagreement? A",
+    "SurveyTitle": "Op-ed effect by prior position on infrastructure spending (extension of: Dialogue Through Disagreeme",
     "SkinLibrary": "Qualtrics",
     "SkinType": "templated",
     "Skin": {
@@ -341,7 +371,7 @@
      "overrides": null
     },
     "NewScoring": 1,
-    "SurveyMetaDescription": "Respondents are screened for position on a topic, with equal numbers of pro- and anti-spending re..."
+    "SurveyMetaDescription": "Respondents are screened for their position on infrastructure spending. Equal numbers of pro- and..."
    }
   },
   {
@@ -359,10 +389,10 @@
    "SurveyID": "SV_filedrawer00000",
    "Element": "SQ",
    "PrimaryAttribute": "QID1",
-   "SecondaryAttribute": "You are invited to take part in a research survey on political opinions. It take",
+   "SecondaryAttribute": "This is a research study about opinions and a chatbot conversation. It takes abo",
    "TertiaryAttribute": null,
    "Payload": {
-    "QuestionText": "You are invited to take part in a research survey on political opinions. It takes about 10 minutes and is voluntary. Do you consent to participate?",
+    "QuestionText": "This is a research study about opinions and a chatbot conversation. It takes about 10 minutes and is voluntary. Do you agree to participate?",
     "DataExportTag": "consent",
     "DataVisibility": {
      "Private": false,
@@ -371,7 +401,7 @@
     "Configuration": {
      "QuestionDescriptionOption": "UseText"
     },
-    "QuestionDescription": "You are invited to take part in a research survey on political opinions. It takes about 10 minute...",
+    "QuestionDescription": "This is a research study about opinions and a chatbot conversation. It takes about 10 minutes and...",
     "Validation": {
      "Settings": {
       "ForceResponse": "ON",
@@ -386,10 +416,10 @@
     "SubSelector": "TX",
     "Choices": {
      "1": {
-      "Display": "I consent"
+      "Display": "I agree"
      },
      "2": {
-      "Display": "I do not consent"
+      "Display": "I do not agree"
      }
     },
     "ChoiceOrder": [
@@ -408,10 +438,10 @@
    "SurveyID": "SV_filedrawer00000",
    "Element": "SQ",
    "PrimaryAttribute": "QID2",
-   "SecondaryAttribute": "Do you support or oppose increasing government spending on the issue described t",
+   "SecondaryAttribute": "Do you support or oppose increased government spending on infrastructure?",
    "TertiaryAttribute": null,
    "Payload": {
-    "QuestionText": "Do you support or oppose increasing government spending on the issue described to you on the previous screen? (Your answers determine which article you will read.)",
+    "QuestionText": "Do you support or oppose increased government spending on infrastructure?",
     "DataExportTag": "group",
     "DataVisibility": {
      "Private": false,
@@ -420,7 +450,7 @@
     "Configuration": {
      "QuestionDescriptionOption": "UseText"
     },
-    "QuestionDescription": "Do you support or oppose increasing government spending on the issue described to you on the prev...",
+    "QuestionDescription": "Do you support or oppose increased government spending on infrastructure?",
     "Validation": {
      "Settings": {
       "ForceResponse": "ON",
@@ -457,10 +487,10 @@
    "SurveyID": "SV_filedrawer00000",
    "Element": "SQ",
    "PrimaryAttribute": "QID3",
-   "SecondaryAttribute": "Please read the following opinion article carefully. It argues against your curr",
+   "SecondaryAttribute": "Please read the following op-ed, which argues against your own position on infra",
    "TertiaryAttribute": null,
    "Payload": {
-    "QuestionText": "Please read the following opinion article carefully. It argues against your current position.",
+    "QuestionText": "Please read the following op-ed, which argues against your own position on infrastructure spending, and then continue. ${e://Field/article}",
     "DataVisibility": {
      "Private": false,
      "Hidden": false
@@ -468,7 +498,7 @@
     "Configuration": {
      "QuestionDescriptionOption": "UseText"
     },
-    "QuestionDescription": "Please read the following opinion article carefully. It argues against your current position.",
+    "QuestionDescription": "Please read the following op-ed, which argues against your own position on infrastructure spendin...",
     "Validation": {
      "Settings": {
       "Type": "None"
@@ -490,10 +520,10 @@
    "SurveyID": "SV_filedrawer00000",
    "Element": "SQ",
    "PrimaryAttribute": "QID4",
-   "SecondaryAttribute": "Please read the following article about an unrelated everyday topic carefully.",
+   "SecondaryAttribute": "Please read the following article and then continue. {{ed:article}}",
    "TertiaryAttribute": null,
    "Payload": {
-    "QuestionText": "Please read the following article about an unrelated everyday topic carefully.",
+    "QuestionText": "Please read the following article and then continue. ${e://Field/article}",
     "DataVisibility": {
      "Private": false,
      "Hidden": false
@@ -501,7 +531,7 @@
     "Configuration": {
      "QuestionDescriptionOption": "UseText"
     },
-    "QuestionDescription": "Please read the following article about an unrelated everyday topic carefully.",
+    "QuestionDescription": "Please read the following article and then continue. ${e://Field/article}",
     "Validation": {
      "Settings": {
       "Type": "None"
@@ -516,17 +546,17 @@
     "GradingData": [],
     "NextChoiceId": 1,
     "NextAnswerId": 1,
-    "DataExportTag": "q_plac"
+    "DataExportTag": "q_placebo"
    }
   },
   {
    "SurveyID": "SV_filedrawer00000",
    "Element": "SQ",
    "PrimaryAttribute": "QID5",
-   "SecondaryAttribute": "Next you will have a short conversation with a chatbot about the issue. Please s",
+   "SecondaryAttribute": "Next you will talk with a chatbot about infrastructure spending and the article ",
    "TertiaryAttribute": null,
    "Payload": {
-    "QuestionText": "Next you will have a short conversation with a chatbot about the issue. Please share your views and respond to its questions for a few minutes.",
+    "QuestionText": "Next you will talk with a chatbot about infrastructure spending and the article you read. Please discuss for a few exchanges.",
     "DataVisibility": {
      "Private": false,
      "Hidden": false
@@ -534,7 +564,7 @@
     "Configuration": {
      "QuestionDescriptionOption": "UseText"
     },
-    "QuestionDescription": "Next you will have a short conversation with a chatbot about the issue. Please share your views a...",
+    "QuestionDescription": "Next you will talk with a chatbot about infrastructure spending and the article you read. Please...",
     "Validation": {
      "Settings": {
       "Type": "None"
@@ -556,10 +586,10 @@
    "SurveyID": "SV_filedrawer00000",
    "Element": "SQ",
    "PrimaryAttribute": "QID6",
-   "SecondaryAttribute": "How much do you support increasing government spending on this issue? (1 = stron",
+   "SecondaryAttribute": "How much do you support increased government spending on infrastructure? (1 = st",
    "TertiaryAttribute": null,
    "Payload": {
-    "QuestionText": "How much do you support increasing government spending on this issue? (1 = strongly oppose, 7 = strongly support)",
+    "QuestionText": "How much do you support increased government spending on infrastructure? (1 = strongly oppose, 7 = strongly support)",
     "DataExportTag": "toward_counterarg",
     "DataVisibility": {
      "Private": false,
@@ -568,7 +598,7 @@
     "Configuration": {
      "QuestionDescriptionOption": "UseText"
     },
-    "QuestionDescription": "How much do you support increasing government spending on this issue? (1 = strongly oppose, 7 = s...",
+    "QuestionDescription": "How much do you support increased government spending on infrastructure? (1 = strongly oppose, 7...",
     "Validation": {
      "Settings": {
       "ForceResponse": "ON",
@@ -630,10 +660,10 @@
    "SurveyID": "SV_filedrawer00000",
    "Element": "SQ",
    "PrimaryAttribute": "QID7",
-   "SecondaryAttribute": "How certain are you of your position, from 0 to 100?",
+   "SecondaryAttribute": "How certain are you of your position on infrastructure spending? (0 = not at all",
    "TertiaryAttribute": null,
    "Payload": {
-    "QuestionText": "How certain are you of your position, from 0 to 100?",
+    "QuestionText": "How certain are you of your position on infrastructure spending? (0 = not at all, 100 = completely)",
     "DataExportTag": "certainty",
     "DataVisibility": {
      "Private": false,
@@ -642,7 +672,7 @@
     "Configuration": {
      "QuestionDescriptionOption": "UseText"
     },
-    "QuestionDescription": "How certain are you of your position, from 0 to 100?",
+    "QuestionDescription": "How certain are you of your position on infrastructure spending? (0 = not at all, 100 = completely)",
     "Validation": {
      "Settings": {
       "ForceResponse": "ON",
@@ -665,10 +695,10 @@
    "SurveyID": "SV_filedrawer00000",
    "Element": "SQ",
    "PrimaryAttribute": "QID8",
-   "SecondaryAttribute": "Thank you. The article you read was written for this study and may present only ",
+   "SecondaryAttribute": "Thank you. The op-ed and article were written for research. The chatbot is an au",
    "TertiaryAttribute": null,
    "Payload": {
-    "QuestionText": "Thank you. The article you read was written for this study and may present only one side of the issue. The chatbot is an automated program. Contact the research team with any questions.",
+    "QuestionText": "Thank you. The op-ed and article were written for research. The chatbot is an automated program. Your answers are confidential.",
     "DataVisibility": {
      "Private": false,
      "Hidden": false
@@ -676,7 +706,7 @@
     "Configuration": {
      "QuestionDescriptionOption": "UseText"
     },
-    "QuestionDescription": "Thank you. The article you read was written for this study and may present only one side of the i...",
+    "QuestionDescription": "Thank you. The op-ed and article were written for research. The chatbot is an automated program....",
     "Validation": {
      "Settings": {
       "Type": "None"

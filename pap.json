@@ -35,7 +35,8 @@
     },
     "population": {
       "country": "US",
-      "sample": "online_panel"
+      "sample": "online_panel",
+      "description": "US adults, CloudResearch online panel"
     },
     "outcome_type": "attitude"
   },

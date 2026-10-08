@@ -1,45 +1,45 @@
 {
  "id": "advance_design",
  "kind": "mechanism",
- "title": "Validating conversation keywords against attitudes, with a no-chat arm and delayed follow-up",
- "rationale": "In the source study both arms chatted, so the 0.64-point shift (95% CI [0.37, 0.91]) cannot be split between the op-ed and the chatbot. Keyword gaps of 16.6 and 26.7 percentage points may reflect echoing of the op-ed rather than changed belief, and attitudes were measured only once, right after exposure.",
- "contribution": "Identifies the chatbot's added effect beyond the op-ed text, checks whether keyword use tracks real attitude change, and tests whether the effect lasts.",
+ "title": "Chatbot conversation versus a standard attitude scale as a persuasion measure",
+ "rationale": "The source placebo arm also chatted with the chatbot, so the 0.64-point shift in support (95% CI [0.37, 0.91]) compares op-ed with placebo, not chatbot with no chatbot. Keyword differences (+0.166 counterargument, +0.267 supportive) may reflect article content echoed back rather than attitude change. A pre-exposure baseline, a no-chat arm and a delayed follow-up separate these.",
+ "contribution": "Tests whether a chatbot conversation detects or adds to attitude change measured by a standard scale, using a no-chat comparison and a baseline.",
  "limitations": [
-  "Wave 2 attrition may be differential across arms.",
-  "Keyword dictionary from the source study is not available in the survey text and must be supplied.",
-  "Pre-measurement may sensitise participants and inflate consistency.",
-  "US online panel only; anti-spending group may again be small."
+  "Pre-measurement may sensitise respondents and inflate consistency",
+  "Attrition at the one-week follow-up may be selective",
+  "Anti-spending quotas still give a smaller subgroup",
+  "Transcript classifier validity depends on a human-coded validation sample"
  ],
  "design": {
-  "title": "Op-ed x chatbot factorial with pre/post and 2-week follow-up",
-  "overview": "Participants report their spending attitude and certainty, are randomised to one of four arms (op-ed or placebo article, followed by a chatbot conversation or no conversation), and then report attitude and certainty again. About two weeks later they complete the same measures. Chat transcripts are coded with the existing keyword dictionary and by blinded human or LLM raters for argument adoption versus echo.",
-  "hypothesis": "If conversation adds persuasion beyond the text, the op-ed+chat arm will shift attitudes more than the op-ed-only arm, and the difference will persist at 2 weeks. If it does not, the arms will not differ, or the chat-driven difference will fade. Within the op-ed+chat arm, argument-adoption coding should predict attitude shift better than keyword counts.",
-  "primaryOutcome": "Immediate change in support toward the op-ed position (post minus pre), with the 2-week change as the durability outcome.",
-  "comparison": "Op-ed+chatbot versus op-ed only (chatbot increment); op-ed versus placebo (text effect); wave 2 versus wave 1 change; keyword and adoption measures as predictors of shift within the op-ed+chat arm.",
-  "population": "US online panel adults who hold a position on government spending, about 400 per arm (1,600 total before attrition).",
+  "title": "Op-ed x chatbot 2x2 with baseline and one-week follow-up",
+  "overview": "Respondents report baseline support and certainty. They are randomised to an op-ed against their own position or a placebo article, and independently to a chatbot conversation or a no-chat filler task. Support and certainty are measured again immediately, and support again after about one week. Chat transcripts are coded with a validated classifier.",
+  "hypothesis": "The op-ed shifts support toward the op-ed position within each chat condition. The chatbot adds no detectable shift beyond the scale. Counterargument content in chats tracks, but does not replace, the scale change.",
+  "primaryOutcome": "Change in support toward the op-ed position (post minus baseline, 1-7 recoded).",
+  "comparison": "Op-ed versus placebo within chat and no-chat arms; op-ed x chat interaction; classifier-coded chat content as a predictor of scale change.",
+  "population": "US adults on an online panel, with quotas to oversample anti-spending respondents.",
   "conditions": [
    {
     "id": "c1",
     "title": "Op-ed + chatbot",
-    "description": "Read an op-ed against own position, then chat with a chatbot about it.",
+    "description": "Op-ed against own position, then chatbot conversation",
     "nodeId": "arm1"
    },
    {
     "id": "c2",
-    "title": "Op-ed only",
-    "description": "Read an op-ed against own position, then no chat.",
+    "title": "Op-ed + filler",
+    "description": "Op-ed against own position, then no-chat filler task",
     "nodeId": "arm2"
    },
    {
     "id": "c3",
     "title": "Placebo + chatbot",
-    "description": "Read an unrelated article, then chat with a chatbot.",
+    "description": "Unrelated article, then chatbot conversation",
     "nodeId": "arm3"
    },
    {
     "id": "c4",
-    "title": "Placebo only",
-    "description": "Read an unrelated article, then no chat.",
+    "title": "Placebo + filler",
+    "description": "Unrelated article, then filler task",
     "nodeId": "arm4"
    }
   ],
@@ -51,7 +51,7 @@
      {
       "id": "q_consent",
       "type": "MC",
-      "text": "You are invited to a research study on opinions about government spending. It has two parts, about two weeks apart. Participation is voluntary. Do you consent to take part?",
+      "text": "You are invited to a research survey on government spending opinions, with a follow-up in about one week. Participation is voluntary. Do you consent to participate?",
       "tag": "consent",
       "multiple": false,
       "required": true,
@@ -73,77 +73,99 @@
     ]
    },
    {
-    "id": "b_pre",
-    "title": "Pre measures",
+    "id": "b_base",
+    "title": "Baseline",
     "questions": [
      {
-      "id": "q_pre_att",
+      "id": "q_group",
       "type": "MC",
-      "text": "Overall, how much do you support increased government spending on social programs? (1 = strongly oppose, 7 = strongly support)",
-      "tag": "pre_support",
+      "text": "Do you generally favour more or less government spending?",
+      "tag": "group",
       "multiple": false,
       "required": true,
       "choices": [
        {
-        "id": "p1",
+        "id": "pro",
+        "text": "More spending",
+        "recode": "1"
+       },
+       {
+        "id": "anti",
+        "text": "Less spending",
+        "recode": "0"
+       }
+      ],
+      "rows": [],
+      "sourceQuestionId": "group"
+     },
+     {
+      "id": "q_sup0",
+      "type": "MC",
+      "text": "Before reading anything: how much do you support increased government spending? (1 = strongly oppose, 7 = strongly support)",
+      "tag": "support_pre",
+      "multiple": false,
+      "required": true,
+      "choices": [
+       {
+        "id": "s1",
         "text": "1",
         "recode": "1"
        },
        {
-        "id": "p2",
+        "id": "s2",
         "text": "2",
         "recode": "2"
        },
        {
-        "id": "p3",
+        "id": "s3",
         "text": "3",
         "recode": "3"
        },
        {
-        "id": "p4",
+        "id": "s4",
         "text": "4",
         "recode": "4"
        },
        {
-        "id": "p5",
+        "id": "s5",
         "text": "5",
         "recode": "5"
        },
        {
-        "id": "p6",
+        "id": "s6",
         "text": "6",
         "recode": "6"
        },
        {
-        "id": "p7",
+        "id": "s7",
         "text": "7",
         "recode": "7"
        }
       ],
       "rows": [],
-      "sourceQuestionId": "toward_counterarg"
+      "sourceQuestionId": ""
      },
      {
-      "id": "q_pre_cert",
+      "id": "q_cert0",
       "type": "TE",
       "text": "How certain are you of your position? (0-100)",
-      "tag": "pre_certainty",
+      "tag": "certainty_pre",
       "multiple": false,
       "required": true,
       "choices": [],
       "rows": [],
-      "sourceQuestionId": "certainty"
+      "sourceQuestionId": ""
      }
     ]
    },
    {
-    "id": "b_oped",
+    "id": "b_op",
     "title": "Op-ed",
     "questions": [
      {
-      "id": "q_oped",
+      "id": "q_op",
       "type": "DB",
-      "text": "Please read this article carefully. It argues against your stated position on government spending. [The op-ed text matching the participant's pre-measured position is shown here.]",
+      "text": "Please read this opinion article arguing against your position on government spending. [An article of about 400 words presents the strongest case against the respondent's own position.]",
       "tag": "oped_text",
       "multiple": false,
       "required": false,
@@ -154,13 +176,13 @@
     ]
    },
    {
-    "id": "b_plac",
+    "id": "b_pl",
     "title": "Placebo",
     "questions": [
      {
-      "id": "q_plac",
+      "id": "q_pl",
       "type": "DB",
-      "text": "Please read this article carefully. It is about an unrelated everyday topic. [The placebo article text is shown here.]",
+      "text": "Please read this article. [An article of about 400 words on an unrelated topic, such as urban gardening.]",
       "tag": "placebo_text",
       "multiple": false,
       "required": false,
@@ -177,8 +199,8 @@
      {
       "id": "q_chat",
       "type": "DB",
-      "text": "Now please talk with our chatbot for about 3 minutes. It will ask what you thought of the article you just read. Type your thoughts and respond to its questions.",
-      "tag": "chat_intro",
+      "text": "Next, please chat with our assistant for about three minutes about the article and your views on government spending. [Chat window opens here.]",
+      "tag": "chat_task",
       "multiple": false,
       "required": false,
       "choices": [],
@@ -188,14 +210,31 @@
     ]
    },
    {
-    "id": "b_post",
-    "title": "Post measures",
+    "id": "b_fill",
+    "title": "Filler",
     "questions": [
      {
-      "id": "q_post_att",
+      "id": "q_fill",
+      "type": "TE",
+      "text": "Please describe in a few sentences what you did yesterday morning.",
+      "tag": "filler_task",
+      "multiple": false,
+      "required": true,
+      "choices": [],
+      "rows": [],
+      "sourceQuestionId": ""
+     }
+    ]
+   },
+   {
+    "id": "b_out",
+    "title": "Outcomes",
+    "questions": [
+     {
+      "id": "q_sup1",
       "type": "MC",
-      "text": "Overall, how much do you support increased government spending on social programs? (1 = strongly oppose, 7 = strongly support)",
-      "tag": "post_support",
+      "text": "Now, how much do you support increased government spending? (1 = strongly oppose, 7 = strongly support)",
+      "tag": "toward_counterarg",
       "multiple": false,
       "required": true,
       "choices": [
@@ -239,74 +278,10 @@
       "sourceQuestionId": "toward_counterarg"
      },
      {
-      "id": "q_post_cert",
+      "id": "q_cert1",
       "type": "TE",
       "text": "How certain are you of your position? (0-100)",
-      "tag": "post_certainty",
-      "multiple": false,
-      "required": true,
-      "choices": [],
-      "rows": [],
-      "sourceQuestionId": "certainty"
-     }
-    ]
-   },
-   {
-    "id": "b_w2",
-    "title": "Wave 2 follow-up (about 2 weeks later)",
-    "questions": [
-     {
-      "id": "q_w2_att",
-      "type": "MC",
-      "text": "Overall, how much do you support increased government spending on social programs? (1 = strongly oppose, 7 = strongly support)",
-      "tag": "w2_support",
-      "multiple": false,
-      "required": true,
-      "choices": [
-       {
-        "id": "w1",
-        "text": "1",
-        "recode": "1"
-       },
-       {
-        "id": "w2",
-        "text": "2",
-        "recode": "2"
-       },
-       {
-        "id": "w3",
-        "text": "3",
-        "recode": "3"
-       },
-       {
-        "id": "w4",
-        "text": "4",
-        "recode": "4"
-       },
-       {
-        "id": "w5",
-        "text": "5",
-        "recode": "5"
-       },
-       {
-        "id": "w6",
-        "text": "6",
-        "recode": "6"
-       },
-       {
-        "id": "w7",
-        "text": "7",
-        "recode": "7"
-       }
-      ],
-      "rows": [],
-      "sourceQuestionId": "toward_counterarg"
-     },
-     {
-      "id": "q_w2_cert",
-      "type": "TE",
-      "text": "How certain are you of your position? (0-100)",
-      "tag": "w2_certainty",
+      "tag": "certainty",
       "multiple": false,
       "required": true,
       "choices": [],
@@ -322,7 +297,7 @@
      {
       "id": "q_debrief",
       "type": "DB",
-      "text": "Thank you. This study examined how reading an article and chatting with a chatbot affect opinions. The op-ed presented one side of a debated issue and the other article was unrelated. Please contact the research team with any questions.",
+      "text": "Thank you. The article argued one side of a debated issue and was written for this study. We will email you in about one week for a short follow-up in which we ask again about your support for government spending.",
       "tag": "debrief",
       "multiple": false,
       "required": false,
@@ -335,7 +310,7 @@
   ],
   "flow": [
    {
-    "id": "n_consent",
+    "id": "f_consent",
     "type": "block",
     "label": "Consent",
     "children": [],
@@ -347,11 +322,11 @@
     "operator": "equals"
    },
    {
-    "id": "n_end",
+    "id": "f_br",
     "type": "branch",
     "label": "No consent",
     "children": [
-     "n_endnode"
+     "f_end"
     ],
     "blockId": "",
     "field": "",
@@ -361,7 +336,7 @@
     "operator": "selected"
    },
    {
-    "id": "n_endnode",
+    "id": "f_end",
     "type": "end",
     "label": "End",
     "children": [],
@@ -373,11 +348,11 @@
     "operator": "equals"
    },
    {
-    "id": "n_pre",
+    "id": "f_base",
     "type": "block",
-    "label": "Pre",
+    "label": "Baseline",
     "children": [],
-    "blockId": "b_pre",
+    "blockId": "b_base",
     "field": "",
     "value": "",
     "questionId": "",
@@ -387,7 +362,7 @@
    {
     "id": "r1",
     "type": "randomizer",
-    "label": "Randomise",
+    "label": "Arms",
     "children": [
      "arm1",
      "arm2",
@@ -404,11 +379,11 @@
    {
     "id": "arm1",
     "type": "group",
-    "label": "Op-ed + chatbot",
+    "label": "Op-ed + chat",
     "children": [
      "e1",
-     "t1o",
-     "t1c"
+     "t1a",
+     "t1b"
     ],
     "blockId": "",
     "field": "",
@@ -430,11 +405,11 @@
     "operator": "equals"
    },
    {
-    "id": "t1o",
+    "id": "t1a",
     "type": "block",
     "label": "Op-ed",
     "children": [],
-    "blockId": "b_oped",
+    "blockId": "b_op",
     "field": "",
     "value": "",
     "questionId": "",
@@ -442,7 +417,7 @@
     "operator": "equals"
    },
    {
-    "id": "t1c",
+    "id": "t1b",
     "type": "block",
     "label": "Chat",
     "children": [],
@@ -456,10 +431,11 @@
    {
     "id": "arm2",
     "type": "group",
-    "label": "Op-ed only",
+    "label": "Op-ed + filler",
     "children": [
      "e2",
-     "t2o"
+     "t2a",
+     "t2b"
     ],
     "blockId": "",
     "field": "",
@@ -475,17 +451,29 @@
     "children": [],
     "blockId": "",
     "field": "condition",
-    "value": "oped_only",
+    "value": "oped_filler",
     "questionId": "",
     "choiceId": "",
     "operator": "equals"
    },
    {
-    "id": "t2o",
+    "id": "t2a",
     "type": "block",
     "label": "Op-ed",
     "children": [],
-    "blockId": "b_oped",
+    "blockId": "b_op",
+    "field": "",
+    "value": "",
+    "questionId": "",
+    "choiceId": "",
+    "operator": "equals"
+   },
+   {
+    "id": "t2b",
+    "type": "block",
+    "label": "Filler",
+    "children": [],
+    "blockId": "b_fill",
     "field": "",
     "value": "",
     "questionId": "",
@@ -495,11 +483,11 @@
    {
     "id": "arm3",
     "type": "group",
-    "label": "Placebo + chatbot",
+    "label": "Placebo + chat",
     "children": [
      "e3",
-     "t3p",
-     "t3c"
+     "t3a",
+     "t3b"
     ],
     "blockId": "",
     "field": "",
@@ -521,11 +509,11 @@
     "operator": "equals"
    },
    {
-    "id": "t3p",
+    "id": "t3a",
     "type": "block",
     "label": "Placebo",
     "children": [],
-    "blockId": "b_plac",
+    "blockId": "b_pl",
     "field": "",
     "value": "",
     "questionId": "",
@@ -533,7 +521,7 @@
     "operator": "equals"
    },
    {
-    "id": "t3c",
+    "id": "t3b",
     "type": "block",
     "label": "Chat",
     "children": [],
@@ -547,10 +535,11 @@
    {
     "id": "arm4",
     "type": "group",
-    "label": "Placebo only",
+    "label": "Placebo + filler",
     "children": [
      "e4",
-     "t4p"
+     "t4a",
+     "t4b"
     ],
     "blockId": "",
     "field": "",
@@ -566,17 +555,17 @@
     "children": [],
     "blockId": "",
     "field": "condition",
-    "value": "placebo_only",
+    "value": "placebo_filler",
     "questionId": "",
     "choiceId": "",
     "operator": "equals"
    },
    {
-    "id": "t4p",
+    "id": "t4a",
     "type": "block",
     "label": "Placebo",
     "children": [],
-    "blockId": "b_plac",
+    "blockId": "b_pl",
     "field": "",
     "value": "",
     "questionId": "",
@@ -584,11 +573,11 @@
     "operator": "equals"
    },
    {
-    "id": "n_post",
+    "id": "t4b",
     "type": "block",
-    "label": "Post",
+    "label": "Filler",
     "children": [],
-    "blockId": "b_post",
+    "blockId": "b_fill",
     "field": "",
     "value": "",
     "questionId": "",
@@ -596,11 +585,11 @@
     "operator": "equals"
    },
    {
-    "id": "n_w2",
+    "id": "f_out",
     "type": "block",
-    "label": "Wave 2",
+    "label": "Outcomes",
     "children": [],
-    "blockId": "b_w2",
+    "blockId": "b_out",
     "field": "",
     "value": "",
     "questionId": "",
@@ -608,7 +597,7 @@
     "operator": "equals"
    },
    {
-    "id": "n_debrief",
+    "id": "f_deb",
     "type": "block",
     "label": "Debrief",
     "children": [],
@@ -621,40 +610,31 @@
    }
   ],
   "roots": [
-   "n_consent",
-   "n_end",
-   "n_pre",
+   "f_consent",
+   "f_br",
+   "f_base",
    "r1",
-   "n_post",
-   "n_w2",
-   "n_debrief"
+   "f_out",
+   "f_deb"
   ],
   "assumptions": [
-   "Power: about 215 per arm detects 0.4 SD at 80% power (source H1 MDE 0.3985 at 224/215 per arm; observed 0.638). The chat increment is likely smaller than the full effect, so target about 400 per arm (1,600 total), inflated for wave 2 attrition.",
-   "Online panel platform; wave 2 invitation sent about 14 days after wave 1.",
-   "Keywords coded with the source dictionary plus blinded human or LLM coding of argument adoption versus echo, with a validated subsample.",
-   "Mediation by keyword use is exploratory and observational within the op-ed+chat arm.",
-   "Primary analysis is OLS on change scores with robust SEs, preregistered."
+   "Power target: about 215 per arm to detect 0.4 SD at 80% power (H1 MDE 0.3985 with n = 224/215 against the observed 0.638); powered for the main op-ed effect within each chat condition, with a wider margin than needed for the interaction. Total about 860 before attrition.",
+   "Online US panel with quotas for anti-spending respondents; compensation set by the panel",
+   "Chat content coded with a validated classifier checked against human coding, not keyword lists",
+   "A one-week follow-up repeats the support and certainty items; it is run as a separate wave to the same respondents",
+   "Four arms exceed the two-to-four limit only at the limit; the survey is about 10 minutes"
   ],
   "unresolved": [
-   "Op-ed and placebo article texts, chatbot configuration and keyword dictionary must be supplied by the research team.",
-   "IRB approval number and compensation, including the wave 2 bonus, must be supplied.",
-   "Wave 2 is fielded as a separate session; the flow here lists it in sequence."
+   "Actual op-ed and placebo texts, chatbot configuration, classifier and validation sample must be supplied by the research team",
+   "Follow-up wave survey instrument and recontact logistics",
+   "IRB number and compensation"
   ],
   "evidence": [
    {
     "id": "ev1",
-    "title": "Source study package",
+    "title": "Source study",
     "url": "https://github.com/yrvelez/dialogue-through-disagreement",
     "claim": "the source study this extension builds on",
-    "excerpt": "",
-    "origin": "supplied"
-   },
-   {
-    "id": "ev2",
-    "title": "AI-based chatbots in customer service and their effects on user compliance",
-    "url": "https://doi.org/10.1007/s12525-020-00414-7",
-    "claim": "Chatbot interaction can affect user compliance",
     "excerpt": "",
     "origin": "supplied"
    }

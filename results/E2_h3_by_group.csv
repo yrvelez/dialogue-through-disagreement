@@ -1,0 +1,2 @@
+analysis,term,arm,estimate,std_error,p_value,conf_low,conf_high,n
+E2,treat:C(_mod)[T.pro],treat x group=pro,0.22676736845050324,0.0799259607581242,0.0045508538786857835,0.07011536393481813,0.38341937296618833,446

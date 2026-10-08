@@ -1,98 +1,49 @@
 {
  "got_right": [
-  "Random assignment to an op-ed against the respondent's own position versus a placebo article, with the chatbot in both arms, so the op-ed effect is cleanly identified (H1 0.64, 95% CI [0.37, 0.91]).",
-  "Tied the attitude result to a behavioural trace in the conversation: op-ed keyword use rose by 16.6 pp (counterargument) and 26.7 pp (supportive), both well above their MDEs.",
-  "Reported HC2 intervals, the n lost to missing values (446 to 439) and the underpowered anti-spending subgroup (n=59, interaction p=0.37) without overclaiming.",
-  "Open data and a replication script, so the post hoc plan can be audited."
+  "Random assignment to an op-ed against the respondent's own position versus an unrelated placebo article, with a chatbot conversation in both arms, so the contrast isolates the op-ed's content from the chatting itself.",
+  "The attitude result is large relative to what the design can detect: 0.64 points (95% CI [0.37, 0.91]) against an MDE of 0.40 (observed/MDE = 1.6), and it holds when restricted to pro-spending respondents (0.657, n = 380).",
+  "Conversation keyword use gives a behavioural trace of what participants took from the op-ed, with clear gaps from the placebo arm (counterargument +0.166, supportive +0.267; the latter is 2.44 times its MDE).",
+  "The raw data are open, and the post hoc status of every test is disclosed."
  ],
  "why_it_did_not_land": [
   {
+   "cause": "power",
+   "detail": "The certainty drop is barely above the detectable threshold, so its size is uncertain and a replication could easily miss it. The anti-spending subgroup is too small to say anything about moderation.",
+   "evidence": "H2: observed -5.31 vs MDE 5.15 (ratio 1.03), CI [-8.9, -1.7]. S1: anti-spending n = 59, effect 0.23 (SE 0.45); interaction 0.425, p = 0.37."
+  },
+  {
    "cause": "design",
-   "detail": "Both arms get the chatbot, so the study cannot say whether the chatbot works as a measurement device or adds persuasion. The title question is untested.",
-   "evidence": "Placebo + chatbot is the control; the Limitations section concedes the chatbot's contribution cannot be separated."
+   "detail": "Both arms chat with the bot, and the chatbot's role as a measurement device is never tested. There is no chatbot-free or survey-only attitude measure, so the study cannot show the chatbot measures persuasion better than a standard scale. Attitudes are measured only once, after the chat.",
+   "evidence": "Limitations: the placebo arm includes a chatbot conversation. The design has two arms, with the outcome measured after the conversation."
   },
   {
    "cause": "measurement",
-   "detail": "Keyword use may be echo of the op-ed rather than adopted belief. Supportive keywords (own side) rose more than counterargument keywords, which fits echoing or topic priming better than persuasion.",
-   "evidence": "H4 0.267 vs H3 0.166, control means 0.08 and 0.09; no validation against attitudes."
-  },
-  {
-   "cause": "power",
-   "detail": "The certainty effect is barely above the detectable threshold, so its size is uncertain. The anti-spending subgroup is far too small to test moderation.",
-   "evidence": "H2 observed/MDE = 1.03 (-5.31 vs 5.15); S1 anti-spending n=59, interaction 0.425, p=0.372."
+   "detail": "Keyword use is a crude proxy for persuasion, and it may reflect exposure to the op-ed's wording rather than attitude change. Keyword counts are also partly mechanical, since the placebo group never saw the op-ed vocabulary.",
+   "evidence": "H3/H4 control means 0.088 and 0.078 versus treated 0.253 and 0.345; the corrections required relabelling these as keyword use, not recall."
   },
   {
    "cause": "framing",
-   "detail": "No pre-registration and no multiplicity correction; the plan was reconstructed from the replication script. All results are post hoc, and the claim check returned major_revision.",
-   "evidence": "Registration status 'none'; analysis_tags all 'unregistered'."
-  },
-  {
-   "cause": "sample",
-   "detail": "Outcomes were measured right after exposure in one US panel, and only 13% of the sample held the anti-spending position, so durability and generality are unknown.",
-   "evidence": "S1 n=59 vs 380; single-wave design."
+   "detail": "The title and abstract promise a validated measurement device and dialogue through disagreement, but the evidence is a single op-ed effect with no validation against a benchmark. There was no pre-registration and four uncorrected tests, and the retrieved literature is off-topic, so the study is not tied to the persuasion literature.",
+   "evidence": "Plan reconstructed post hoc; related work says none of the retrieved studies tests the question."
   }
  ],
- "debates": [
-  {
-   "id": "D1",
-   "label": "Does the chatbot add persuasion beyond the text?",
-   "position_a": "Conversational interaction adds persuasive or compliance value beyond static text.",
-   "position_b": "Chatbot interaction yields superficial engagement; any attitude shift comes from the text and may not last.",
-   "what_this_study_says": "It cannot tell. The chatbot is in both arms, so the 0.64 effect is attributable to the op-ed and the chatbot's marginal contribution is unidentified. The retrieved works are mostly customer-service or general AI papers, so the debate is only weakly grounded.",
-   "works": [
-    {
-     "id": "10.1007/s12525-020-00414-7",
-     "side": "a"
-    },
-    {
-     "id": "10.1111/1475-6765.12705",
-     "side": "neutral"
-    },
-    {
-     "id": "10.1016/j.iotcps.2023.04.003",
-     "side": "b"
-    },
-    {
-     "id": "10.1016/j.ijinfomgt.2023.102642",
-     "side": "b"
-    }
-   ]
-  }
- ],
+ "debates": [],
  "briefs": [
   {
    "id": "advance_design",
    "kind_legacy": "mechanism",
    "mode": "survey_experiment",
-   "title": "Validating conversation keywords against attitudes, with a no-chat arm and delayed follow-up",
-   "question": "Do op-ed keywords in chatbot conversations track genuine attitude change, and does the chat add to the op-ed's effect?",
-   "why_this_fixes_the_failure": "Addresses design and measurement: a no-chatbot arm identifies the chatbot's contribution, a pre-chat attitude measure ties keywords to belief change, and a wave 2 tests durability.",
-   "debate": "D1",
+   "title": "Chatbot conversation versus a standard attitude scale as a persuasion measure",
+   "question": "Does a chatbot conversation after an opposing op-ed detect attitude change that a standard scale misses, or add anything to it?",
+   "why_this_fixes_the_failure": "Fixes the design and measurement causes: it adds the missing no-chatbot comparison and a pre-exposure baseline, and tests keyword use against attitude change.",
+   "debate": null,
    "addresses": [],
-   "design_sketch": "Randomise to op-ed+chatbot, op-ed only, placebo+chatbot, placebo only. Measure attitude and certainty before and immediately after, and again at about 2 weeks. Code keywords with the existing dictionary plus a blinded human or LLM coding of argument adoption versus echo. Test whether keyword use mediates or predicts attitude shift within the op-ed arms.",
+   "design_sketch": "Randomise respondents to a 2x2 design: op-ed against own position or placebo article, then either a chatbot conversation or a no-chat filler task. Measure support and certainty before reading and again after. Code the chat transcripts for counterargument and supportive content with a validated classifier, not keyword lists. Also measure support again after about one week to check decay. Use a US online panel, with sampling quotas for anti-spending respondents.",
    "moderator_or_condition": null,
    "power_target": {
     "n_per_arm": 215,
     "mde": 0.4,
-    "basis": "H1 MDE 0.3985 at 224/215 per arm; observed 0.638. Because the chat increment is likely smaller than the full effect, consider about 400 per arm."
-   },
-   "needs_qsf": true
-  },
-  {
-   "id": "theoretical_debate",
-   "kind_legacy": "alternative",
-   "mode": "survey_experiment",
-   "title": "Chatbot as persuader versus passive measurement",
-   "question": "Does the chatbot's conversational role (challenging, neutral, or absent) change attitude shift after the same op-ed?",
-   "why_this_fixes_the_failure": "Addresses design and framing by discriminating between the 'adds value' and 'superficial engagement' positions of D1.",
-   "debate": "D1",
-   "addresses": [],
-   "design_sketch": "All participants read the op-ed. Randomise to a chatbot that argues back, a chatbot that only asks neutral questions, or a static comparison task of equal length. Outcome is attitude change at once and at 1 week. If position a holds, the arguing chatbot beats the other two; if position b holds, the arms are equal and the effect decays.",
-   "moderator_or_condition": null,
-   "power_target": {
-    "n_per_arm": 400,
-    "mde": 0.28,
-    "basis": "Chat increment is expected to be at most about half the observed 0.64; the SD of 1.49 from the H1 row gives MDE about 0.29 at 400 per arm."
+    "basis": "H1 MDE of 0.3985 (n = 224/215) against the observed 0.638; powered for the main op-ed effect within each chat condition, with a wider margin than needed for the interaction."
    },
    "needs_qsf": true
   },
@@ -100,21 +51,21 @@
    "id": "generalizability_conditional",
    "kind_legacy": "boundary",
    "mode": "survey_experiment",
-   "title": "Oversampling the anti-spending position and varying topic",
-   "question": "Does the op-ed plus chatbot effect hold for respondents opposed to the spending position and on other issues?",
-   "why_this_fixes_the_failure": "Addresses sample and power: the anti-spending group (n=59) could not test moderation (interaction p=0.37).",
+   "title": "Does the op-ed effect hold for respondents who oppose spending?",
+   "question": "Is the op-ed-plus-chatbot effect on support as large for anti-spending respondents as for pro-spending respondents?",
+   "why_this_fixes_the_failure": "Fixes the sample cause: the anti-spending group (n = 59) was too small to estimate its effect or the group difference.",
    "debate": null,
    "addresses": [],
-   "design_sketch": "Recruit equal numbers of pro- and anti-spending respondents and add a second, unrelated policy topic. Use the same op-ed versus placebo contrast, with the chatbot in both arms. Estimate the treatment by position and treatment by topic interactions.",
-   "moderator_or_condition": "Prior position (pro vs anti spending) and issue topic",
+   "design_sketch": "Screen a large panel for position on infrastructure spending and recruit equal numbers of pro- and anti-spending respondents. Within each group, randomise to an op-ed against the respondent's own position or a placebo article, then a chatbot conversation. Outcomes are support moved toward the op-ed position and certainty. Estimate the treatment-by-group interaction directly.",
+   "moderator_or_condition": "Respondent's prior position on spending (anti vs pro), balanced by design",
    "power_target": {
-    "n_per_arm": 250,
-    "mde": 0.35,
-    "basis": "Anti-spending effect of 0.23 (SE 0.454 at n=59); detecting 0.23 needs about 650 per cell at SD 1.49, so 250 per arm detects only about 0.35 within a subgroup. Size to the interaction as the target."
+    "n_per_arm": 300,
+    "mde": 0.32,
+    "basis": "Anti-spending effect observed 0.232 (SE 0.454, n = 59), so even the pro-spending 0.657 is the reference. About 300 per cell gives 80% power for 0.32 at the H1 SD of 1.49; detecting the interaction of 0.425 needs more."
    },
    "needs_qsf": true
   }
  ],
- "verdict": "A follow-up is worth running. The op-ed effect is solid (H1 1.6x MDE), but the study cannot answer its titular question about the chatbot, because every arm had one. Run advance_design first: it adds no-chat arms, validates the keyword measure against pre/post attitudes and adds a delayed wave, which resolves the main design and measurement gaps. The literature offers only a thin debate, with mostly off-topic retrieved works, so ground the theory in persuasion and LLM-dialogue papers before preregistering.",
+ "verdict": "A follow-up is worth running, mainly for the attitude result, which is well above its MDE (0.64 vs 0.40) and robust to the pro-spending restriction. The certainty drop is marginal (ratio 1.03), and the claim that the chatbot is a measurement device is untested because both arms chat and attitudes are measured only once. Run the chatbot-versus-standard-scale experiment first: it adds the missing no-chatbot arm and a pre-exposure baseline, and replaces keyword counts with validated coding. The balanced anti-spending sample comes second. The literature retrieved does not bear on the question, so no theoretical debate can be identified from it.",
  "model": "anthropic/claude-sonnet-5.5"
 }
