@@ -3,7 +3,7 @@
 *Yamil R. Velez, Patrick Liu · 2026-10-08 · N = 446 analysed of 449 collected · survey experiment*
 
 <!-- fd:badges -->
-![provenance: fully agentic](figures/badges/provenance.svg) ![review: light pass · 10/10 claims supported](figures/badges/review.svg) ![plan: reconstructed](figures/badges/registration.svg) ![status: draft](figures/badges/release.svg) ![design: survey experiment](figures/badges/design.svg) ![data: open data](figures/badges/data.svg) ![model calls: $0.37](figures/badges/cost.svg)
+![provenance: fully agentic](figures/badges/provenance.svg) ![review: light pass · 2 corrected · 10/10 claims supported](figures/badges/review.svg) ![plan: reconstructed](figures/badges/registration.svg) ![status: draft](figures/badges/release.svg) ![design: survey experiment](figures/badges/design.svg) ![data: open data](figures/badges/data.svg) ![model calls: $0.37](figures/badges/cost.svg)
 
 > **Provenance: FULLY AGENTIC — no human review recorded.** filedrawer 0.1.0, 2026-10-08; orchestrator `anthropic/claude-sonnet-5.5`, standard `anthropic/claude-haiku-5.5`, zero data retention requested. Reviewer pass: yes. Human steps recorded: 0. Release status: draft. Model calls: $0.37, 99k tokens in and 25k out. Cite as: Velez, Y. R., & Liu, P. (2026). Dialogue Through Disagreement? A Chatbot as a Measurement Device for Persuasion [Unpublished study package, generated with filedrawer 0.1.0]. The File Drawer. https://github.com/yrvelez/dialogue-through-disagreement
 >
@@ -212,7 +212,7 @@ The study was not pre-registered, so the hypotheses, outcomes and models were fi
 
 *Light Pass review: referee `anthropic/claude-sonnet-5.5`, checking agent `anthropic/claude-sonnet-5.5`. The Light Pass does two things: it checks every reported estimate against the result tables, and every analysis against the pre-analysis plan. It does not judge the design, methods or interpretation; see the other review options. The agent applied the corrections below itself; no person reviewed or revised this report. Planned analyses are never changed.*
 
-**Outcome.** 10 of 10 checked claims supported after the agent's corrections; 4 of 4 planned analyses run as planned; 2 reworded; 2 text fixes; 1 correction pass.
+**Outcome.** 10 of 10 checked claims supported after the agent's corrections (2 flagged claims corrected); 4 of 4 planned analyses run as planned; 2 reworded; 2 text fixes; 1 correction pass.
 
 #### Corrections
 
@@ -260,9 +260,11 @@ Re-check of the corrected text: The E2 bold Finding still describes 0.227 as a g
 
 #### Other review options
 
-- **Coarse**: the open-source coarse-ink reviewer, run on your machine (about $1-2), then imported. `uvx coarse-ink review report.md, then filedrawer review-import . coarse FILE`
-- **Refine**: upload the report to refine.ink, then import its review. `filedrawer review-import . refine FILE`
-- **OpenReview or any referee report**: import a review posted on OpenReview, or any other referee report. `filedrawer review-import . openreview FILE`
+- **Coarse**: run the open-source reviewer on your machine (about $1-2, your OpenRouter key): uvx --python 3.12 coarse-ink review report.md, which writes report_review.md. `filedrawer review-import . coarse FILE`
+- **Refine**: upload report.md (or a PDF of it) at refine.ink, wait for the review, and save it (PDF, Markdown or text). `filedrawer review-import . refine FILE`
+- **OpenAIReview**: run ChicagoHAI's open-source reviewer on your machine with your own model key (OpenRouter, OpenAI, Anthropic or Gemini; the cost depends on the model you pick): uvx openaireview review report.md, which writes its comments to review_results/. `filedrawer review-import . openaireview FILE`
+- **Edyth**: open the report in Edyth (the Check with Edyth button on the study's filedrawer.org page): with the code FILEDRAWER the reference check and reading suggestions are free, and an optional deep review is paid from your own Edyth balance; save the Markdown letter it returns. `filedrawer review-import . edyth FILE`
+- **Any other referee report**: save any referee report, from a person or a model (PDF, Markdown or text). `filedrawer review-import . other FILE`
 
 
 <!-- fd:section id=potential -->

@@ -314,6 +314,7 @@
   "data": "https://github.com/yrvelez/dialogue-through-disagreement/tree/main/data"
  },
  "related": [],
+ "acknowledgments": null,
  "addenda": [],
  "responses": null,
  "extensions": [
@@ -393,7 +394,8 @@
   "supported": 10,
   "total": 10,
   "open_analytical": 0,
-  "on_revised_text": true
+  "on_revised_text": true,
+  "corrected": 2
  },
  "review_round": 1,
  "review_rounds": 1,
@@ -408,7 +410,7 @@
   {
    "name": "review",
    "label": "review",
-   "value": "light pass · 10/10 claims supported",
+   "value": "light pass · 2 corrected · 10/10 claims supported",
    "color": "green",
    "href": null
   },
